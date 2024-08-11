@@ -1,0 +1,61 @@
+#main{
+    width: 450px;
+    height: 400px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#head_logo{
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: black;
+}
+
+#logo{
+    display: block;
+    width: 40%;
+    background-color: white;
+    margin-left:auto;
+    margin-right:auto;    
+}
+
+#body{
+    background-color: orange;
+}
+.login_body{
+    display: block;
+    padding:0%;
+    width: 90%;
+    height: 10%;
+    margin: 10px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#login_button{
+    background-color: #36AC37;
+    color: white;
+}
+
+#option{
+    width: 90%;
+    text-align: cneter;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.option_body{
+    background-color: yellow;
+    display: inline-block;
+    width: 49%;
+}
+
+#login_status{
+}
+
+#IP_protocol{
+
+    text-align: right;
+}
