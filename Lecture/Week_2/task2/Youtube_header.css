@@ -1,36 +1,4 @@
-/* #head{
-    background-color: gray;
-    position: fixed;
-}
 #logo{
-    width: 1000px;
-    background-color: red;
-    text-align: center;
-
-}
-
-#aside{
-    background-color: burlywood;
-    border: 1px solid black;
-    height: 1000px;
-
-}
-#body{
-    background-color: lightgray;
-}
-.video_box{
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-    background-color: white;
-    border: 1px solid black;
-    display: inline-flex;
-    flex-flow: wrap;
-    justify-content: center;
-    align-content: center;
-} */
-
-header{
     background-color: lightgray;
     height: 100px;
     width: 100%;
@@ -38,31 +6,28 @@ header{
     display: block;
     position: fixed;
 }
-/* nav{
-    background-color: lightgray;
-    height: 80px;
-    border: 1px solid black;
-
-} */
-aside{
+#side{
     background-color: lightgray;
     height: 100%;
     border: 1px solid black;
     top: 100px;
-    display: inline-flex;
     position: fixed;
 }
+/* main{
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+} */
 #body{
     width: 100%;
     height: 100%;
     background-color: gray;
-    display: flex;
+    display: flex;  
     flex-direction: center;
     flex-wrap: wrap;
-    align-items: center;
+
 }
 .video_box{
-
     display: inline-flex;
     padding:0%;
     margin: 5px;
@@ -71,4 +36,5 @@ aside{
     background-color: white;
     border: 1px solid darkgray;
     border-radius: 10px;
+    text-align: center;
 }
