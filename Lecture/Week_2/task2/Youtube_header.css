@@ -1,19 +1,36 @@
 #logo{
     background-color: lightgray;
-    height: 100px;
+    height: 50px;
     width: 100%;
     border: 1px solid black;
-    display: flex;
+    display: inline-flex;
     position: fixed;
     justify-content: space-between;
 
 }
 #leftbox{
     display: inline-flex;
+    width: 30px;
+    height: 30px;
 
 }
-#rightbox{
+#centerbox{
     display: inline-flex;
+    height: 30px;
+}
+
+
+#searchBox{
+    max-width: 1000px;
+}
+
+#rightbox{
+    background-color: black;
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    justify-content: space-around;
 
 }
 
