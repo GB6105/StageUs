@@ -1,13 +1,32 @@
-#logo{
+/*#logo{
     background-color: lightgray;
     height: 50px;
     width: 100%;
     border: 1px solid black;
-    display: inline-flex;
+    display: flex;
     position: fixed;
     justify-content: space-between;
 
 }
+#aside{
+    display: inline;
+}
+#side{
+    background-color: lightgray;
+    height: 100%;
+    width: 80px;
+    border: 1px solid black;
+    top: 100px;
+    position: fixed;
+} 
+
+#nav{
+    display: inline;
+    position: fixed;
+} */
+
+
+/*
 #leftbox{
     display: inline-flex;
     width: 30px;
@@ -33,11 +52,37 @@
     justify-content: space-around;
 
 }
+*/
+
+
+#logo{
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+    border: 1px solid black;
+    position: fixed;
+    display: inline-flex;
+    justify-content: space-between;
+}
 
 #side{
-    background-color: lightgray;
-    height: 100%;
+    background-color: gray;
     border: 1px solid black;
-    top: 100px;
     position: fixed;
+    display:inline-flex;
+    width: 80px;
+    height: 100%;
+    top: 50px;
+    flex-direction: column;
+}
+
+#category{
+    background-color: gray;
+    border: 1px solid black;
+    position: fixed;
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    top:50px;
+    left:90px;
 }
