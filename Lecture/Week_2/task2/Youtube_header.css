@@ -3,38 +3,24 @@
     height: 100px;
     width: 100%;
     border: 1px solid black;
-    display: block;
+    display: flex;
     position: fixed;
+    justify-content: space-between;
+
 }
+#leftbox{
+    display: inline-flex;
+
+}
+#rightbox{
+    display: inline-flex;
+
+}
+
 #side{
     background-color: lightgray;
     height: 100%;
     border: 1px solid black;
     top: 100px;
     position: fixed;
-}
-/* main{
-    width: fit-content;
-    height: fit-content;
-    background-color: black;
-} */
-#body{
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    display: flex;  
-    flex-direction: center;
-    flex-wrap: wrap;
-
-}
-.video_box{
-    display: inline-flex;
-    padding:0%;
-    margin: 5px;
-    width: 300px;
-    height: 300px;
-    background-color: white;
-    border: 1px solid darkgray;
-    border-radius: 10px;
-    text-align: center;
 }
