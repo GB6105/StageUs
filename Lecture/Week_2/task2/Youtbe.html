@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="Youtube_header.css">
+    <link rel="stylesheet" type="text/css" href="Youtube_side.css">
     <link rel="stylesheet" type="text/css" href="Youtube_body.css">
 </head>
 <body>
@@ -12,37 +13,36 @@
     <header>
         <div id = "logo">
 
-            <span id = "leftbox">
-                <!-- <input class = "leftbutton" id = "menuButton" 
-                type = "button" value ="Menu"> -->
+            <div id = "leftbox">
+
                 <button class = "leftbutton" id = "menuButton"
-                type = "button">   </button>
-                <input class = "leftbutton" id = "logoButton" 
-                type = "button" value ="Youtube">
+                type = "button"></button>
+                <button class = "leftbutton" id = "logoButton" 
+                type = "button" value ="Youtube"></button>
 
-            </span>
+            </div>
 
-            <span id = "centerbox">
-                <input class ="centerbutton" id = "searchBox"
-                 type = "text">
-                <input class ="centerbutton" id = "searchButton" 
-                type = "button" value ="search">
-                <input class ="centerbutton" id = "voiceSearchButton" 
-                type = "button" value ="voiceSearch">
-            </span>
+            <div id = "centerbox">
+     
+                <input class ="centerbutton" id = "searchBox" type = "text">
+                <button class ="centerbutton" id = "searchButton" 
+                type = "button" value ="search"></button>
+                <button class ="centerbutton" id = "voiceSearchButton" 
+                type = "button" value ="voiceSearch"></button>
+            </div>
 
-            <span id = "rightbox">
-                <input type = "button" value ="Making" >
-                <input type = "button" value ="Alarm" >
-                <input type = "button" value ="Account" >
-            </span>
+            <div id = "rightbox">
+                <input class = "rightbutton" type = "button" value ="Making" >
+                <input class = "rightbutton" type = "button" value ="Alarm" >
+                <input class = "rightbutton" type = "button" value ="Account" >
+            </div>
 
         </div>
     </header>
 
 
-    <nav id = "nav">
-        <span id = "side"> Menu
+    <nav id = "sidebar">
+        <span id = "side">
             <input class = "sidemenu" type = "button" value ="home">
             <input class = "sidemenu" type = "button" value ="shorts">
             <input class = "sidemenu" type = "button" value ="subscribe">
@@ -50,44 +50,69 @@
             <input class = "sidemenu" type = "button" value ="myaccount">
             <input class = "sidemenu" type = "button" value ="save">
         </span>
+
         <span id = "category">
             <input class = "categorybox" type = "button" value = "전체">
             <input class = "categorybox" type = "button" value = "게임">
             <input class = "categorybox" type = "button" value = "음악">
+            <input class = "categorybox" type = "button" value = "뉴스">
             <input class = "categorybox" type = "button" value = "라이브">
             <input class = "categorybox" type = "button" value = "스케치 코미디">
-            <input class = "categorybox" type = "button" value = "힙합">
+            <input class = "categorybox" type = "button" value = "액션 어드벤처 게임">
             <input class = "categorybox" type = "button" value = "뷰티 팁">
-            <input class = "categorybox" type = "button" value = "액션">
-            <input class = "categorybox" type = "button" value = "요리프로그램">
+            <input class = "categorybox" type = "button" value = "요리">
+            <input class = "categorybox" type = "button" value = "랩">
+            <input class = "categorybox" type = "button" value = "최근에 업로드된 동영상">
+            <input class = "categorybox" type = "button" value = "감상한 동영상">
         </span>
     </nav>
     
     <main>
-        <!-- <div id = "emptyhead">head</div> -->
-        <!-- <span id = "emptyside">side</span> -->
-        <span id = "body">
-            <span class = "video_box"> 1번 박스</span>
-            <span class = "video_box"> 2번 박스</span>
-            <span class = "video_box"> 3번 박스</span>
-            <span class = "video_box"> 4번 박스</span>
-            <span class = "video_box"> 5번 박스</span>
-            <span class = "video_box"> 6번 박스</span>  
-            <span class = "video_box"> 7번 박스</span>
-            <span class = "video_box"> 8번 박스</span>
-            <span class = "video_box"> 9번 박스</span>
-            <span class = "video_box"> 10번 박스</span>
-            <span class = "video_box"> 11번 박스</span>
-            <span class = "video_box"> 12번 박스</span>
-            <span class = "video_box"> 13번 박스</span>
-            <span class = "video_box"> 14번 박스</span>
-            <span class = "video_box"> 15번 박스</span>
-            <span class = "video_box"> 16번 박스</span>
-            <span class = "video_box"> 17번 박스</span>
-            <span class = "video_box"> 18번 박스</span>
-            <span class = "video_box"> 19번 박스</span>
-            <span class = "video_box"> 20번 박스</span>
-        </span>
+        <div id = "body">
+
+            <div class = "video_box">
+                <div class = "thumbnailBox"> Thumbnail</div>
+                <div class = "titleBox">
+                    <button id = "profile">profile </button>
+                    <button id = "title">Title_of_video_clip</button>
+                    <div>empty</div>
+                    <div>
+                        <button id = "channelName"> name_of_channel</button>
+                        <div class = "info">
+                            <div id = "view"> view _times . </div>
+                            <div id = "uploadTime">_ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "video_box"> No.1_content</div>
+            <div class = "video_box"> No.2_content</div>
+            <div class = "video_box"> No.3_content</div>
+            <div class = "video_box"> No.4_content</div>
+            <div class = "video_box"> No.5_content</div>
+            <div class = "video_box"> No.6_content</div>
+            <div class = "video_box"> No.7_content</div>
+            <div class = "video_box"> No.8_content</div>
+            <div class = "video_box"> No.9_content</div>
+            <div class = "video_box"> No.10_content</div>
+            <div class = "video_box"> No.11_content</div>
+            <div class = "video_box"> No.12_content</div>
+            <div class = "video_box"> No.13_content</div>
+            <div class = "video_box"> No.14_content</div>
+            <div class = "video_box"> No.15_content</div>
+            <div class = "video_box"> No.16_content</div>
+            <div class = "video_box"> No.17_content</div>
+            <div class = "video_box"> No.18_content</div>
+            <div class = "video_box"> No.19_content</div>
+            <div class = "video_box"> No.20_content</div>
+
+      
+
+
+
+            
+        </div>
     </main>
 </body>
 </html>
