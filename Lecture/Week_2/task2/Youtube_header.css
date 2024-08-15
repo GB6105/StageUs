@@ -30,7 +30,7 @@
 
     border: 1px solid rgba(0,0,0,0);
     background-color: rgba(0,0,0,0); 
-    background-image: url(3barMenu.png);
+    background-image: url(images/3barMenu.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -44,7 +44,7 @@
 
     border: 1px solid rgba(0,0,0,0);
     background-color: rgba(0,0,0,0); 
-    background-image: url(Youtube_logo.webp);
+    background-image: url(images/Youtube_logo.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -76,7 +76,7 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    background-image: url(lensicon.png);
+    background-image: url(images/lensicon.png);
     background-size: 30px;
     background-position: center;
     background-repeat: no-repeat; 
@@ -91,7 +91,7 @@
     border-radius: 20px;
     border-color: rgba(0,0,0,0);
 
-    background-image: url(micicon2.png);
+    background-image: url(images/micicon2.png);
     background-size: 20px;
     background-position: center;
     background-repeat: no-repeat; 
@@ -119,7 +119,7 @@
 }
 
 #Making{
-    background-image: url(makingfilm.png);
+    background-image: url(images/makingfilm.png);
     background-color: rgba(0,0,0,0);
     background-size: 30px;
     background-position: center;
@@ -127,7 +127,7 @@
 }
 
 #Alarm{
-    background-image: url(bellicon.png);
+    background-image: url(images/bellicon.png);
     background-color: rgba(0,0,0,0);
     background-size: 20px;
     background-position: center;
