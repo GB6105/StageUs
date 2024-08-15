@@ -1,35 +1,35 @@
-main{
+/* main{
     height:100%;
     width: 100%;
-}
+} */
 
 #body{
     display: inline-flex;
     flex-wrap: wrap;
     margin-top: 80px;
     margin-left: 70px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
-.boxsize{
+/* .boxsize{
     display:inline-flex;
     width:375px;
     height:350px;
     justify-content: center;
     flex-grow:1;
-}
+} */
 .video_box{
     display: inline-grid;
     grid-template-rows: 2fr 1fr;
     margin-top:20px;
     margin:10px;
-    width: 375px;
-    height: 305px;
+    /* width: 375px; */
+    /* height: 305px; */
 
     background-color: white;
     border: 1px solid rgba(0,0,0,0);
     border-radius: 10px;
 
-    flex-grow:1;
+    /* flex-grow:1; */
     
 }
 
@@ -49,12 +49,15 @@ main{
     border: 1px solid rgba(0,0,0,0);
     border-radius: 10px;
     
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 2px;
     padding: 5px;
 
     align-items: center;
+
+    /* grid 써서 그런듯
+     */
 }
 
 .profile{
