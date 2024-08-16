@@ -1,6 +1,6 @@
 header{
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 
     position: fixed;
@@ -8,17 +8,15 @@ header{
 
     height: 50px;
     width:100%;
-    background-color: black;
+    background-color: white;
     border: 1px solid rgba(0,0,0,0);
 }
 
 /* 왼쪽 메뉴 구역*/
 #logoBox{
     display: flex;
-    /* justify-content: space-between; */
     margin-right: 50px;
     align-items: center;
-
 
     height: 40px;
     width: fit-content;
@@ -29,7 +27,7 @@ header{
     height: 40px;
     margin-left:15px;
     border-color:rgba(0,0,0,0);
-    background-color: gray;
+    background-color: rgba(0,0,0,0);
 }
 
 #menuImg{
@@ -37,13 +35,12 @@ header{
     width:100%;
 }
 
-
 #logoButton{
     padding:0px;
     height: 100%;
     margin-left:15px;
     border-color:rgba(0,0,0,0);
-    background-color:gray;
+    background-color:rgba(0,0,0,0);
 
 }
 #logoImg{
@@ -68,7 +65,6 @@ header{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     flex-shrink: 1;
-
 }
 #searchButton{
     width: 60px;
@@ -110,6 +106,7 @@ header{
 .rightbutton{
     width: 40px;
     height: 40px;
+    background-color: rgba(0,0,0,0);
     border-radius: 20px;
     border-color: rgba(0,0,0,0);
     margin-right:30px;
@@ -123,5 +120,9 @@ header{
     width:100%;
 }
 
+#account{
+    border: 1px solid black;
+    border-radius: 20px;
+}
 
 
