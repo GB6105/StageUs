@@ -7,8 +7,10 @@
 </head>
 <body>
 
-    <input type = "button" value="난수 생성" onclick="getRandomVar()">
-    <input type = "button" value="판정" onclick="judge()">
+    <input type = "button" value="난수 생성" onclick="getTargetNumber()">
+
+    <!-- <input type = "button" value="입력" onclick="inputAnswer()"> -->
+    <input type = "button" value="판정" onclick="judge(target1,target2,target3)">
     <input type = "text" id = "number1">
     <input type = "text" id = "number2">
     <input type = "text" id = "number3">
@@ -18,9 +20,18 @@
         <h1 id = "target3"></h1>
     </article>
     <article>
-        <h1 id = "strike">strike</h1>
-        <h1 id = "ball">ball</h1>
+        <h1 id = "strike">0 strike</h1>
+        <h1 id = "ball">0 ball</h1>
+    </article>
+    <article>
+        <h1 id = "정답"></h1>
+
     </article>
     <script src = "BaseballGame.js"></script>
 </body>
 </html>
+
+<!-- 아무것도 안입력하고 판정만 했을 때 오류 -->
+<!-- 숫자를 적게 입력하거나 숫자를 넘치게 입력했을 때 오류-->
+<!-- 정답 여부 출력 -->
+ <!-- 다시시작가능하게 -->
