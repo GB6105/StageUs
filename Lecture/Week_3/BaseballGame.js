@@ -27,6 +27,13 @@ function getTargetNumber(){
 var input1 =0 ,input2=0, input3=0;
 
 function inputNumber(n){
+    //전광판 색깔 초기화 파트
+    document.getElementById("ball1").style.backgroundColor = "gray";
+    document.getElementById("ball2").style.backgroundColor = "gray";
+    document.getElementById("ball3").style.backgroundColor = "gray";
+    document.getElementById("strike1").style.backgroundColor = "gray";
+    document.getElementById("strike2").style.backgroundColor = "gray";
+
     if(input1 == 0){
         input1 = n
         console.log(input1, "input1에 " + n + "이 저장됩니다")   
@@ -66,17 +73,47 @@ function judge(target1,target2,target3){
     //정답 판정 부분
     if (strike == 3){
         document.getElementById("정답").innerHTML = "정답입니다."
+        document.getElementById("strike1").style.backgroundColor = "yellow";
+        document.getElementById("strike2").style.backgroundColor = "yellow";
+        
     }
+    
     else{ // 틀리면 값을 초기화
-        document.getElementById("정답").innerHTML = "다시 시도해보세요"
+        if(strike == 1){
+            document.getElementById("정답").innerHTML = "다시 시도해보세요"
+            document.getElementById("strike1").style.backgroundColor = "yellow";
+        }
+        else if(strike==2 ){
+            document.getElementById("정답").innerHTML = "다시 시도해보세요"
+            document.getElementById("strike1").style.backgroundColor = "yellow";
+            document.getElementById("strike2").style.backgroundColor = "yellow";
+        }
+
+        if(ball == 1){
+            document.getElementById("정답").innerHTML = "다시 시도해보세요"
+            document.getElementById("ball1").style.backgroundColor = "green";
+        }
+        else if(ball==2 ){
+            document.getElementById("정답").innerHTML = "다시 시도해보세요"
+            document.getElementById("ball1").style.backgroundColor = "green";
+            document.getElementById("ball2").style.backgroundColor = "green";
+
+        }
+        else if(ball==3 ){
+            document.getElementById("정답").innerHTML = "다시 시도해보세요"
+            document.getElementById("ball1").style.backgroundColor = "green";
+            document.getElementById("ball2").style.backgroundColor = "green";
+            document.getElementById("ball3").style.backgroundColor = "green";
+        }
+        
         input1 = 0;
         input2 = 0;
         input3 = 0;
         
     }
 
-    document.getElementById("strike").innerHTML = strike+" Strike";
-    document.getElementById("ball").innerHTML = ball+" Ball";
+    document.getElementById("Str").innerHTML = strike+" Strike";
+    document.getElementById("Bal").innerHTML = ball+" Ball";
     strike = 0;
     ball =0;
 }
@@ -88,6 +125,12 @@ function resetGame(){
     input1 = 0;
     input2 = 0;
     input3 = 0;
+    document.getElementById("ball1").style.backgroundColor = "gray";
+    document.getElementById("ball2").style.backgroundColor = "gray";
+    document.getElementById("ball3").style.backgroundColor = "gray";
+    document.getElementById("strike1").style.backgroundColor = "gray";
+    document.getElementById("strike2").style.backgroundColor = "gray";
+
     getTargetNumber();
     console.clear()
 }
@@ -102,4 +145,5 @@ function judgeNumber(inputValue,t1,t2,t3,k){
     else if (inputValue == t2 || inputValue == t3){
         ball += 1
     }
+
 }

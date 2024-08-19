@@ -8,13 +8,13 @@
 </head>
 <body>
     <!-- 추후 게임 시작이나 다시시작등으로 수정 및 추가 -->
-    <input type = "button" value="난수 생성" onclick="getTargetNumber()">
-    <input type = "button" value="재시작" onclick="resetGame()">
-
+    <div id = "startOption">
+        <input type = "button" value="난수 생성" onclick="getTargetNumber()">
+        <input type = "button" value="재시작" onclick="resetGame()">
+    </div>
     
     
     <!-- 버튼 입력 부분 -->
-    <!-- <input type = "button" value = "정답입력" onclick ="thorwAnser()"> -->
     
     <div id = "inputPart">
         <button class = "input" id = "inputNumber1" onclick="inputNumber(1)">1</button>
@@ -31,11 +31,7 @@
     <!-- 판정 버튼 -->
     <input type = "button" value="판정" onclick="judge(target1,target2,target3)">
     
-    <!-- <div >
-        <input type = "text" id = "number1">
-        <input type = "text" id = "number2">
-        <input type = "text" id = "number3">
-    </div> -->
+
     <!-- 생성된 난수 확인 용 추 후 hidden이나 지울 것-->
     <article>
         <div class = "answerBox" id = "target1">0</div>
@@ -45,9 +41,32 @@
 
     <!-- 결과 출력 란 -->
     <article>
-        <div class = "result" id = "strike">0 strike</div>
-        <div class = "result" id = "ball">0 ball</div>
+        <div class = "result" id = "Str">0 strike</div>
+        <div class = "result" id = "Bal">0 ball</div>
     </article>
+    
+    <div id = "scoreBoard">
+        <div class = "resultBox">B</div>
+        <div id = "Point">
+            <div class = "score" id = "ball1"></div>
+            <div class = "score" id = "ball2"></div>
+            <div class = "score" id = "ball3"></div>
+        </div>
+
+        <div class = "resultBox">S</div>
+        <div id = "Point">
+            <div class = "score" id = "strike1"></div>
+            <div class = "score" id = "strike2"></div>
+        </div>
+
+        <div class = "resultBox">O</div>
+        <div id = "Point">
+            <div class = "score" id = "out1"></div>
+            <div class = "score" id = "out2"></div>
+        </div>
+            
+    </div>
+
     <article>
         <div id = "정답"></div>
 
