@@ -1,38 +1,3 @@
-// 함수 생성 본
-// function getRandomVar(){
-//     var target1= Math.floor(Math.random() * 10);
-//     var target2= Math.floor(Math.random() * 10);
-//     var target3= Math.floor(Math.random() * 10);
-//     if (target1 == target2 || target1 == target3 || target2 == target3){
-//         getRandomVar()
-//     }
-//     console.log(target1)
-//     console.log(target2)
-//     console.log(target3)
-// }
-// getRandomVar()
-
-// var t1=0, t2=0, t3=0
-// var arr = [];
-
-// function getRandomVar(){
-//     var target1= Math.floor(Math.random() * 10);
-//     var target2= Math.floor(Math.random() * 10);
-    
-//     var target3= Math.floor(Math.random() * 10);
-//     if (target1 == target2 || target1 == target3 || target2 == target3){
-//         getRandomVar()
-//     }
-//     // console.log(target1)
-//     // console.log(target2)
-//     // console.log(target3)
-
-//     document.getElementById("target1").innerHTML = target1;
-//     document.getElementById("target2").innerHTML = target2;
-//     document.getElementById("target3").innerHTML = target3;
-
-// }
-
 var target1, target2, target3;
 
 function getRandomNumber(){
@@ -40,7 +5,7 @@ function getRandomNumber(){
 }
 
 function getTargetNumber(){
-    target1= getRandomNumber()
+    target1 = getRandomNumber()
     target2 = getRandomNumber()
     if (target1 == target2){
         target2 = getRandomNumber()
@@ -57,12 +22,67 @@ function getTargetNumber(){
     console.log("Answer is ",target1, target2,target3)
 }
 
+var input1 =0 ,input2=0,input3=0;
 
+function inputNumber1(){
+    if(input1 == 0){
+        input1 = 1
+        console.log(input1, "input1에 1이 저장됩니다")   
+    }
+    else if (input1 != 0 && input1 != 1){
+        input2 = 1
+        console.log(input2, "input2에 1이 저장됩니다")
+    }
+    else if (input2 !=0){
+        input3 = 1
+        console.log(input3, "input3에 1이 저장됩니다")
+    }
+    else if (input1 ==1 || input2 == 1|| input3 == 1){
+        console.log("다른 수를 입력해주세요")
+    }
+}
+function inputNumber2(){
+    if(input1 == 0){
+        input1 = 2
+        console.log(input1, "input1에 2이 저장됩니다")   
+    }
+    else if (input1 != 0 && input1 != 2){
+        input2 = 2
+        console.log(input2, "input2에 2이 저장됩니다")
+    }
+    else if (input2 !=0){
+        input3 = 2
+        console.log(input3, "input3에 2이 저장됩니다")
+    }
+    else if (input1 ==2 || input2 == 2|| input3 == 2){
+        console.log("다른 수를 입력해주세요")
+    }
+}
+function inputNumber3(){
+    if(input1 == 0){
+        input1 = 3
+        console.log(input1, "input1에 3이 저장됩니다")   
+    }
+    else if (input1 != 0 && input1 != 3){
+        input2 = 3
+        console.log(input2, "input2에 3이 저장됩니다")
+    }
+    else if (input2 !=0){
+        input3 = 3
+        console.log(input3, "input3에 3이 저장됩니다")
+    }
+    else if (input1 == 3 || input2 == 3|| input3 == 3){
+        console.log("다른 수를 입력해주세요")
+    }
+}
+console.log(input1)
 function judge(target1,target2,target3){
-
-    var input1 = parseInt(document.getElementById("number1").value);
-    var input2 = parseInt(document.getElementById("number2").value);
-    var input3 = parseInt(document.getElementById("number3").value);
+    console.log("판정이 시작되었고 input1에"+input1+ "이 저장되었습니다.")
+    console.log("판정이 시작되었고 input2에"+input2+ "이 저장되었습니다.")
+    console.log("판정이 시작되었고 input3에"+input3+ "이 저장되었습니다.")
+    // var input1 = parseInt(document.getElementById("number1").value);
+    // var input2 = parseInt(document.getElementById("number2").value);
+    // var input3 = parseInt(document.getElementById("number3").value);
     
     var strike = 0;
     var ball = 0;
@@ -71,7 +91,7 @@ function judge(target1,target2,target3){
     if(input1 == target1){
         strike += 1
     }
-    else if (input1 == target2 || input2 == target3){
+    else if (input1 == target2 || input1 == target3){
         ball += 1
     }
     
@@ -94,6 +114,7 @@ function judge(target1,target2,target3){
     console.log(strike)
     console.log(ball)
 
+    //정답 판정 부분
     if (strike == 3){
         document.getElementById("정답").innerHTML = "정답입니다."
     }
@@ -108,19 +129,3 @@ function judge(target1,target2,target3){
     return strike;
     
 }
-
-function atari(){
-    if (strike == 3){
-        document.getElementById("정답").innerHTML = "정답입니다."
-    }
-
-}
-
-atari()
-
-
-// function printMessage(){
-//     console.log("hello")
-// }
-// printMessage()
-

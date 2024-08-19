@@ -4,29 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel ="stylesheet" type ="text/css" href = "BaseballGame.css">
 </head>
 <body>
-
+    <!-- 추후 게임 시작이나 다시시작등으로 수정 및 추가 -->
     <input type = "button" value="난수 생성" onclick="getTargetNumber()">
 
-    <!-- <input type = "button" value="입력" onclick="inputAnswer()"> -->
+    
+    
+    <!-- 버튼 입력 부분 -->
+    <!-- <input type = "button" value = "정답입력" onclick ="thorwAnser()"> -->
+    <div id = "inputPart">
+        <button class = "input" id = "inputNumber1" onclick="inputNumber1()">1</button>
+        <button class = "input" id = "inputNumber2" onclick="inputNumber2()">2</button>
+        <button class = "input" id = "inputNumber3" onclick="inputNumber3()">3</button>
+        <button class = "input" id = "inputNumber4">4</button>
+        <button class = "input" id = "inputNumber5">5</button>
+        <button class = "input" id = "inputNumber6">6</button>
+        <button class = "input" id = "inputNumber7">7</button>
+        <button class = "input" id = "inputNumber8">8</button>
+        <button class = "input" id = "inputNumber9">9</button>
+    </div>
+
+    <!-- 판정 버튼 -->
     <input type = "button" value="판정" onclick="judge(target1,target2,target3)">
-    <input type = "text" id = "number1">
-    <input type = "text" id = "number2">
-    <input type = "text" id = "number3">
+    
+    <div >
+        <input type = "text" id = "number1">
+        <input type = "text" id = "number2">
+        <input type = "text" id = "number3">
+    </div>
+    <!-- 생성된 난수 확인 용 추 후 hidden이나 지울 것-->
     <article>
-        <h1 id = "target1"></h1>
-        <h1 id = "target2"></h1>
-        <h1 id = "target3"></h1>
+        <div class = "answerBox" id = "target1">0</div>
+        <div class = "answerBox" id = "target2">0</div>
+        <div class = "answerBox" id = "target3">0</div>
+    </article>
+
+    <!-- 결과 출력 란 -->
+    <article>
+        <div class = "result" id = "strike">0 strike</div>
+        <div class = "result" id = "ball">0 ball</div>
     </article>
     <article>
-        <h1 id = "strike">0 strike</h1>
-        <h1 id = "ball">0 ball</h1>
-    </article>
-    <article>
-        <h1 id = "정답"></h1>
+        <div id = "정답"></div>
 
     </article>
+
+
     <script src = "BaseballGame.js"></script>
 </body>
 </html>
