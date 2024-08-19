@@ -1,7 +1,8 @@
+// 변수 생성 함수
 var target1, target2, target3;
 
 function getRandomNumber(){
-    return Math.floor(Math.random() * 10)
+    return Math.floor(Math.random() * 9)+1
 }
 
 function getTargetNumber(){
@@ -22,94 +23,44 @@ function getTargetNumber(){
     console.log("Answer is ",target1, target2,target3)
 }
 
-var input1 =0 ,input2=0,input3=0;
+//입력 부분 함수
+var input1 =0 ,input2=0, input3=0;
 
-function inputNumber1(){
+function inputNumber(n){
     if(input1 == 0){
-        input1 = 1
-        console.log(input1, "input1에 1이 저장됩니다")   
+        input1 = n
+        console.log(input1, "input1에 " + n + "이 저장됩니다")   
     }
-    else if (input1 != 0 && input1 != 1){
-        input2 = 1
-        console.log(input2, "input2에 1이 저장됩니다")
+    else if (input1 != 0 && input2 == 0 && input1 != n){
+        input2 = n
+        console.log(input2, "input2에 " + n + "이 저장됩니다")
     }
-    else if (input2 !=0){
-        input3 = 1
-        console.log(input3, "input3에 1이 저장됩니다")
+    else if ((input1 != 0 && input1 != n) && (input2 != 0 && input2 != n) && (input3 == 0 && input3 != n)){
+        input3 = n
+        console.log(input3, "input3에 " + n + "이 저장됩니다")
     }
-    else if (input1 ==1 || input2 == 1|| input3 == 1){
+    else if(input1 !=0 && input2 !=0 &&input3 !=0){ 
+        console.log("숫자 3개를 모두 입력했습니다.")
+    }
+    else{
         console.log("다른 수를 입력해주세요")
     }
 }
-function inputNumber2(){
-    if(input1 == 0){
-        input1 = 2
-        console.log(input1, "input1에 2이 저장됩니다")   
-    }
-    else if (input1 != 0 && input1 != 2){
-        input2 = 2
-        console.log(input2, "input2에 2이 저장됩니다")
-    }
-    else if (input2 !=0){
-        input3 = 2
-        console.log(input3, "input3에 2이 저장됩니다")
-    }
-    else if (input1 ==2 || input2 == 2|| input3 == 2){
-        console.log("다른 수를 입력해주세요")
-    }
-}
-function inputNumber3(){
-    if(input1 == 0){
-        input1 = 3
-        console.log(input1, "input1에 3이 저장됩니다")   
-    }
-    else if (input1 != 0 && input1 != 3){
-        input2 = 3
-        console.log(input2, "input2에 3이 저장됩니다")
-    }
-    else if (input2 !=0){
-        input3 = 3
-        console.log(input3, "input3에 3이 저장됩니다")
-    }
-    else if (input1 == 3 || input2 == 3|| input3 == 3){
-        console.log("다른 수를 입력해주세요")
-    }
-}
-console.log(input1)
+
+
+
 function judge(target1,target2,target3){
+
     console.log("판정이 시작되었고 input1에"+input1+ "이 저장되었습니다.")
     console.log("판정이 시작되었고 input2에"+input2+ "이 저장되었습니다.")
     console.log("판정이 시작되었고 input3에"+input3+ "이 저장되었습니다.")
-    // var input1 = parseInt(document.getElementById("number1").value);
-    // var input2 = parseInt(document.getElementById("number2").value);
-    // var input3 = parseInt(document.getElementById("number3").value);
-    
+
     var strike = 0;
     var ball = 0;
 
-    //1번 숫자 판정
-    if(input1 == target1){
-        strike += 1
-    }
-    else if (input1 == target2 || input1 == target3){
-        ball += 1
-    }
-    
-    //2번 숫자 판정
-    if (input2 == target2){
-        strike += 1
-    }
-    else if (input2 == target1 || input2 == target3){
-        ball += 1
-    }
-    
-    //3번 숫자 판정
-    if (input3 == target3){
-        strike += 1
-    }
-    else if(input3 == target1 || input3 == target2){
-        ball += 1
-    }
+    judgeNumber(input1,1)
+    judgeNumber(input2,2)
+    judgeNumber(input3,3)
 
     console.log(strike)
     console.log(ball)
@@ -118,14 +69,37 @@ function judge(target1,target2,target3){
     if (strike == 3){
         document.getElementById("정답").innerHTML = "정답입니다."
     }
-    else{
+    else{ // 틀리면 값을 초기화
         document.getElementById("정답").innerHTML = "다시 시도해보세요"
+        input1 = 0;
+        input2 = 0;
+        input3 = 0;
+        
     }
-
 
     document.getElementById("strike").innerHTML = strike+" Strike";
     document.getElementById("ball").innerHTML = ball+" Ball";
+}
 
-    return strike;
-    
+function resetGame(){
+    target1 = 0;
+    target2 = 0;
+    target3 = 0;
+    input1 = 0;
+    input2 = 0;
+    input3 = 0;
+    getTargetNumber();
+    console.clear()
+}
+
+function judgeNumber(inputValue,k){
+    if(inputValue == 0){
+        console.log("숫자 3개를 입력해주세요 현재 입력된 숫자 개수"+ (k-1))
+    }
+    else if(inputValue == target1){
+        strike += 1
+    }
+    else if (inputValue == target2 || inputValue == target3){
+        ball += 1
+    }
 }
