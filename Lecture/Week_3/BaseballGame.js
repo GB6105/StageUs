@@ -9,10 +9,10 @@ function getTargetNumber(){
     target1 = getRandomNumber()
     target2 = getRandomNumber()
     if (target1 == target2){
-        target2 = getRandomNumber()
+        target2 = getRandomNumber();
     }
     target3 = getRandomNumber()
-    if (target1 == target3|| target2 == target3){
+    if (target1 == target3 || target2 == target3){
         target3 = getRandomNumber()
     }
 
@@ -48,19 +48,17 @@ function inputNumber(n){
 }
 
 
-
+var strike =0, ball =0;
 function judge(target1,target2,target3){
 
     console.log("판정이 시작되었고 input1에"+input1+ "이 저장되었습니다.")
     console.log("판정이 시작되었고 input2에"+input2+ "이 저장되었습니다.")
     console.log("판정이 시작되었고 input3에"+input3+ "이 저장되었습니다.")
 
-    var strike = 0;
-    var ball = 0;
 
-    judgeNumber(input1,1)
-    judgeNumber(input2,2)
-    judgeNumber(input3,3)
+    judgeNumber(input1,target1,target2,target3,1)
+    judgeNumber(input2,target2,target1,target3,2)
+    judgeNumber(input3,target3,target1,target2,3)
 
     console.log(strike)
     console.log(ball)
@@ -79,6 +77,8 @@ function judge(target1,target2,target3){
 
     document.getElementById("strike").innerHTML = strike+" Strike";
     document.getElementById("ball").innerHTML = ball+" Ball";
+    strike = 0;
+    ball =0;
 }
 
 function resetGame(){
@@ -92,14 +92,14 @@ function resetGame(){
     console.clear()
 }
 
-function judgeNumber(inputValue,k){
+function judgeNumber(inputValue,t1,t2,t3,k){
     if(inputValue == 0){
         console.log("숫자 3개를 입력해주세요 현재 입력된 숫자 개수"+ (k-1))
     }
-    else if(inputValue == target1){
+    else if(inputValue == t1){
         strike += 1
     }
-    else if (inputValue == target2 || inputValue == target3){
+    else if (inputValue == t2 || inputValue == t3){
         ball += 1
     }
 }
