@@ -1,49 +1,22 @@
-// 변수 생성 함수
+// 랜덤 값 저장 변수
 var target1, target2, target3;
 
-function getRandomNumber(){
+function getRandomNumber(){ //1-9까지 난수 생성
     return Math.floor(Math.random() * 9)+1
 }
 
 function getTargetNumber(){
     target1 = getRandomNumber()
     target2 = getRandomNumber()
-    console.log(target2 + "처음 생성된 target2")
-    if (target1 == target2){
-        target2 = getRandomNumber();
-        console.log(target2 + "두번째 생성된 target2")
-
-    }
-    if (target1 == target2){
-        target2 = getRandomNumber();
-        console.log(target2 + "세번째 생성된 target2")
-
-    }
     target3 = getRandomNumber()
-    console.log(target3 + "처음 생성된 target3")
-
-    if (target2 == target3 || target1 == target3){
-        target3 = getRandomNumber()
-        console.log(target3 + "두 번째 생성된 target3")
-
+    if (target1 == target2 || target1 == target3 || target2 == target3)
+    {
+        getTargetNumber() // 중복되는 숫자가 생기면 다시 생성하기
     }
-    if(target2 == target3 || target1 == target3){
-        target3 = getRandomNumber()
-        console.log(target3 + "세 번째 생성된 target3")
-
-    }
-    if(target2 == target3 || target1 == target3){
-        target3 = getRandomNumber()
-        console.log(target3 + "네 번째 생성된 target3")
-
-    }
-    // 정답 출력 부분(추후 삭제 요망)
-    // document.getElementById("target1").innerHTML = target1
-    // document.getElementById("target2").innerHTML = target2
-    // document.getElementById("target3").innerHTML = target3
-
-    console.log("Answer is ",target1, target2,target3)
+    console.log("Answer is ",target1, target2,target3) // 콘솔에서 정답 확인
 }
+
+
 // 게임 시작
 function gameStart(){
     document.getElementById("정답").innerHTML = "숫자를 입력해주세요"
@@ -51,15 +24,16 @@ function gameStart(){
     getTargetNumber()
 }
 
-//입력 부분 함수
+//입력값 전역변수
 var input1 =0 ,input2=0, input3=0;
+
 
 function inputNumber(n){
     //전광판 색깔 초기화 파트
     resetScoreBoard()
     resetResultBoard();
     
-
+    //숫자 입력 받는 파트
     if(input1 == 0){
         input1 = n
         console.log(input1, "input1에 " + n + "이 저장됩니다")
@@ -115,13 +89,13 @@ function judge(target1,target2,target3){
                 out += 1
                 document.getElementById("out1").style.backgroundColor = "red";
                 getTargetNumber(); //다음게임으로
-                resetInput();
+                resetInputVlaue();
             }
             else if(out == 1){
                 out += 1
                 document.getElementById("out2").style.backgroundColor = "red";
                 getTargetNumber();//다음게임으로
-                resetInput();
+                resetInputVlaue();
 
             }
             else if(out == 2){
@@ -176,36 +150,40 @@ function judge(target1,target2,target3){
                 document.getElementById("볼").innerHTML ="0 Ball"
 
             }
-            resetInput();
-            
+            //이전 입력 기록 저장
+            document.getElementById("lastInput1").innerHTML = input1;  
+            document.getElementById("lastInput2").innerHTML = input2;   
+            document.getElementById("lastInput3").innerHTML = input3;
+
+            resetInputVlaue(); //입력된 값 초기화         
         }
-        //결과 출력 부분(복구 혹은 수정)
-        // document.getElementById("Str").innerHTML = strike+" Strike";
-        // document.getElementById("Bal").innerHTML = ball+" Ball";
-        resetInputBox();
-        strike = 0;
-        ball =0;
+        resetInputBox(); //숫자 입력 박스 초기화
+        resetScore();   //점수 초기화
     } 
 
 }
 // 입력,정답,전광판,게임등 리셋하는 함수 부분
-function resetInput(){
+function resetInputVlaue(){ //입력값 초기화
     input1 = 0;
     input2 = 0;
     input3 = 0;
 }
-function resetTarget(){
+function resetTarget(){     //랜덤값 초기화
     target1 = 0;
     target2 = 0;
     target3 = 0;
 }
 
-function resetResultBoard(){
+function resetScore(){      //점수 초기화
+    strike = 0;
+    ball =0;
+}
+function resetResultBoard(){    //결과판 초기화
     document.getElementById("스트라이크").innerHTML = "0 Strike"
     document.getElementById("볼").innerHTML = "0 Strike"
 }
 
-function resetScoreBoard(){
+function resetScoreBoard(){     //전광판 초기화
     document.getElementById("ball1").style.backgroundColor = "gray";
     document.getElementById("ball2").style.backgroundColor = "gray";
     document.getElementById("ball3").style.backgroundColor = "gray";
@@ -213,16 +191,16 @@ function resetScoreBoard(){
     document.getElementById("strike2").style.backgroundColor = "gray";
 }
 
-function resetInputBox(){
+function resetInputBox(){       //입력 박스 초기화
     document.getElementById("userInput1").innerHTML = 0   
     document.getElementById("userInput2").innerHTML = 0   
     document.getElementById("userInput3").innerHTML = 0   
 
 }
 
-function resetGame(){
+function resetGame(){   //게임 재시작(개발용)
     resetTarget();
-    resetInput();
+    resetInputVlaue();
     resetScoreBoard();
     document.getElementById("정답").innerHTML = "숫자를 입력하세요"
 
@@ -231,7 +209,7 @@ function resetGame(){
     console.log("Answer is ",target1, target2,target3)
 }
 
-function hardResetGame(){
+function hardResetGame(){   //처음부터 다시시작
     resetGame();
     out = 0;
     document.getElementById("out1").style.backgroundColor = "gray";
@@ -240,7 +218,7 @@ function hardResetGame(){
     document.getElementById("경기결과").innerHTML = ""
 }
 
-function totalGameWon(){
+function totalGameWon(){    //전광판 색깔 변경함수(3게임 승리시)
     document.getElementById("ball1").style.backgroundColor = "green";
     document.getElementById("ball2").style.backgroundColor = "green";
     document.getElementById("ball3").style.backgroundColor = "green";
