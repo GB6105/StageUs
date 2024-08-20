@@ -32,7 +32,7 @@ article{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content:sp;
+    justify-content:space-around;
     align-items: center;
     text-align: center;
     font-size: 24px;
