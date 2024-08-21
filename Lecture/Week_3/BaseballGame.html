@@ -15,8 +15,8 @@
     <article>
         <div id = "resultBoard">
             <div id = "상황출력" >Press Start to play</div>
-            <div id = "스트라이크">.</div>
-            <div id = "볼">.</div>
+            <div id = "스트라이크"></div>
+            <div id = "볼"></div>
             <div id = "경기결과"></div>
         </div>
         
@@ -28,9 +28,9 @@
                 <div class = "lastResult1" id = "lastInput5">0</div>
                 <div class = "lastResult1" id = "lastInput6">0</div>
                 <div class = "lastResult2" id = "lastStrike2">0 </div>
-                <div class = "lastResult2" id = "lastStrike">strike</div>
+                <div class = "lastResult2" id = "lastStrike">S</div>
                 <div class = "lastResult2" id = "lastBall2">0</div>
-                <div class = "lastResult2" id = "lastBall">ball</div>
+                <div class = "lastResult2" id = "lastBall">B</div>
             </div>    
             <!-- 2회차 입력 -->
             <div id = "last">
@@ -38,9 +38,9 @@
                 <div class = "lastResult1" id = "lastInput2">0</div>
                 <div class = "lastResult1" id = "lastInput3">0</div>
                 <div class = "lastResult2" id = "lastStrike1">0</div>
-                <div class = "lastResult2" id = "lastStrike">strike</div>
+                <div class = "lastResult2" id = "lastStrike">S</div>
                 <div class = "lastResult2" id = "lastBall1">0</div>
-                <div class = "lastResult2" id = "lastBall">ball</div>
+                <div class = "lastResult2" id = "lastBall">B</div>
 
             </div>
         </div>
@@ -69,7 +69,6 @@
     </div>
 
     <!-- 판정 버튼 -->
-    <!-- <input id = "throw" type = "button" value="던지기" onclick="judge(target1,target2,target3)"> -->
     
 
     <!-- 생성된 난수 확인 용 추 후 hidden이나 지울 것-->
@@ -118,7 +117,7 @@
         
         <div id = "startOption">
             <input class = "optionButton" type = "button" value="게임시작" onclick="gameStart()">
-            <input class = "optionButton" type = "button" value="재시작" onclick="resetGame()">
+            <input class = "optionButton" type = "button" value="튜토리얼" onclick="tutorial()">
             <input class = "optionButton" type = "button" value="새게임" onclick="hardResetGame()">
         </div>
     </div>
