@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel = "stylesheet" type = "text/css" href = "week3.css">
+</head>
+<body>
+    <!-- <input id = "number" type ="text"ㄴ onchange ="calGugudanEvent()"> -->
+    <!-- input에만 넣을 수 있는 태그, 값이 바뀔 때 실행 -->
+
+    <!-- <div id = "dest">
+        <p id = "result1"></p>
+        <p id = "result2"></p>
+        <p id = "result3"></p>
+        <p id = "result4"></p>
+        <p id = "result5"></p>
+        <p id = "result7"></p>
+        <p id = "result8"></p>
+        <p id = "result9"></p>
+    </div>  -->
+
+    <div id = "parent">
+        <!-- event를 주면 모든 정보를 event에 담겠다는 뜻  -->
+        <div id = "red" draggable="true" ondragstart ="getColorEvent(event)"></div>
+        <div id = "orange" draggable="true" ondragstart ="getColorEvent(event)"></div>
+        <div id = "yellow" draggable="true" ondragstart ="getColorEvent(event)"></div>
+    </div>
+    <div id = "dest" ondragover ="dragOverEvent(event)" ondrop ="setColorEvent(event)"></div>
+    <script src = "week4.js"></script>
+</body>
+</html>

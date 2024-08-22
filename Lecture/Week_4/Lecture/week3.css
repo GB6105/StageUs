@@ -1,0 +1,27 @@
+#parent{
+    width: 300px;
+    height: 100px;
+    display: flex;
+}
+
+#red{
+    background-color: red;
+    flex-grow: 1;
+}
+
+#orange{
+    background-color: orange;
+    flex-grow: 1;
+
+}
+#yellow{
+    background-color: yellow;
+    flex-grow: 1;
+
+}
+
+#dest{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
