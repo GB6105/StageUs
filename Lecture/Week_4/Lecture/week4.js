@@ -90,18 +90,18 @@ function calGugudanEvent(){
 // obj.leader.name
 
 // // object 형 list
-const videolist =[
-    {
-        "title":"테스트 비디오입니다.",
-        "channel":"스테이지어스",
-        "date":"2024-01-02"
-    },
-    {
-        "title":"테스트 비디오입니다.",
-        "channel":"tmxpdlwldjtm",
-        "date":"2024-01-02"
-    }
-]
+// const videolist =[
+//     {
+//         "title":"테스트 비디오입니다.",
+//         "channel":"스테이지어스",
+//         "date":"2024-01-02"
+//     },
+//     {
+//         "title":"테스트 비디오입니다.",
+//         "channel":"스테이지어스",
+//         "date":"2024-01-02"
+//     }
+// ]
 
 
 // 추가적인 기법
