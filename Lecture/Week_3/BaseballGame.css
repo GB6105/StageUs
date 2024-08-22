@@ -1,37 +1,119 @@
-body{
+header{
+    position: fixed;
+    top:0;
+    width: 80%;
 
+    background-color: black;
+    border: 1px dotted gray;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}   
+body{
+    margin-top: 90px;
+    width: 80%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 
     background-image: url("images/background.jpg");
-    background-position-y: 40%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 81%;
+
 }   
 
+/* 결과 출력 창 */
+article{
+    width: 30%;
+    height: 20%;
 
-#userInput{
-    align-self:center;
-    width:100%;
-    height:30px;
 }
-.inputResult{
-    width:30%;
+#resultBoard{
+   
+    background-color: black;
+    border: 1px solid gray;
+    border-radius: 20px;
+    
+    color: white;
+    font-size:24px;
+    text-align:center;
+}
+
+#lastInputBoard{
+    margin-top: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    width:100%;
+    height:30%;
+    margin-bottom: 10px;
+    background-color:white ;
+}
+#last{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+.lastResult1{
+    border: 1px solid black;
+    width: 15%;
+    height:100%;
+    background-color: ivory;
+}
+
+.lastResult2{
+    border: 1px solid black;
+    width: 15%;
     height:100%;
     background-color: gray;
 }
+
+#logText{
+    width:100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+/* 입력 부분 */
 #inputPart{
-
-
     display:inline-flex;
     flex-wrap:wrap;
     align-self: center;
+    
     justify-content: space-evenly;
-    align-items: center;
-    margin-top:40px;
+
+    margin-top:10%;
+
     width: 130px;
     height: 130px;
     background-color: rgba(0,0,0,0)
+}
+#userInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    width:100%;
+    height:30%;
+    margin-bottom: 10px;
+}
+.inputResult{
+    border: 1px solid black;
+    width:30%;
+    height:100%;
+    background-color: ivory;
 }
 .input{
     width: 30%;
@@ -47,21 +129,25 @@ body{
 }
 
 #throw{
+    margin-top: 30px;
+    text-align: center;
     align-self: center;
-    width:100px;
+    width:50px;
     height:fit-content;
     background-color: gray;
 }
 
-
+/* 전광판  */
 #scoreBoard{
-    margin-top: 100px;
+
     display: inline-flex;
+
+    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    padding:0;
-    width: fit-content;
-    height: fit-content;
+    padding:0px;
+    width: 250px;
+    height: 250px;
     background-color: black;
 }
 
@@ -71,47 +157,52 @@ body{
 
     align-items: center;
 
-    width:200px;
-    height: 50px;  
+    width:100%;
+    height: 24%; 
     border: 1px dotted gray;
 }
 
-#scoreBox{
-    width: 100%;
-    display:flex;
-    justify-content: space-around;
-}
-
 .resultBox{
-    width: 50px;
-    height: 50px;
+    width: 30%;
+    height: 100%;
     text-align: center;
     align-content: center;
     
     border: 1px dotted gray;
     color:white;
 }
+
+#scoreBox{
+    width: 70%;
+    display:flex;
+    justify-content: space-around;
+}
+
 .score{
-    width: 40px;
-    height: 40px;
+    color: white;
+    width: 45px;
+    height: 45px;
     border: 1px solid black;
     border-radius: 50%;
     background-color: gray;
 
 }
 
-article{
-    position: fixed;
-
-   
-
-    width: 300px;
-    height: 100px;
-    background-color: black;
-    border: 1px solid gray;
-    border-radius: 20px;
+#startOption{
     
-    color: white;
-    font-size:24px;
-    text-align:center;
+    display: flex;
+    align-items: center;    
+    justify-content: space-around;
+    width: 100%;
+    height: 24%;
+    background-color: black;
+
 }
+
+.optionButton{
+    height: 80%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25%;
+}   
+
