@@ -7,16 +7,51 @@
     <link rel ="stylesheet" type ="text/css" href = "BaseballGame.css">
 </head>
 <body>
-    <!-- 추후 게임 시작이나 다시시작등으로 수정 및 추가 -->
-    <input type = "button" value="난수 생성" onclick="getTargetNumber()">
-    <input type = "button" value="재시작" onclick="resetGame()">
+ 
+    <!-- 전광판 출력 -->
+    <div id = "scoreBoard">
+        
+        <div id = "Point">
+            <div class = "resultBox">B</div>
+            <div id = "scoreBox">
+                <div class = "score" id = "ball1"></div>
+                <div class = "score" id = "ball2"></div>
+                <div class = "score" id = "ball3"></div>
+            </div>
+        </div>
+        
+        <div id = "Point">
+            <div class = "resultBox">S</div>
+            <div id = "scoreBox">
+                <div class = "score" id = "strike1"></div>
+                <div class = "score" id = "strike2"></div>
+            </div>
+        </div>
+
+        <div id = "Point">
+            <div class = "resultBox">O</div>
+            <div id = "scoreBox">
+                <div class = "score" id = "out1"></div>
+                <div class = "score" id = "out2"></div>
+            </div>    
+        </div>
+            
+    </div>
 
     
-    
     <!-- 버튼 입력 부분 -->
-    <!-- <input type = "button" value = "정답입력" onclick ="thorwAnser()"> -->
-    
+    <!-- <div id = "userInput">
+        <div class = "inputReslut" id = "userInput1"></div>
+        <div class = "inputReslut" id = "userInput2"></div>
+        <div class = "inputReslut" id = "userInput3"></div>
+    </div>
+     -->
     <div id = "inputPart">
+        <div id = "userInput">
+            <div class = "inputResult" id = "userInput1">1</div>
+            <div class = "inputResult" id = "userInput2">2</div>
+            <div class = "inputResult" id = "userInput3">3</div>
+        </div>
         <button class = "input" id = "inputNumber1" onclick="inputNumber(1)">1</button>
         <button class = "input" id = "inputNumber2" onclick="inputNumber(2)">2</button>
         <button class = "input" id = "inputNumber3" onclick="inputNumber(3)">3</button>
@@ -29,29 +64,37 @@
     </div>
 
     <!-- 판정 버튼 -->
-    <input type = "button" value="판정" onclick="judge(target1,target2,target3)">
+    <input id = "throw" type = "button" value="던지기" onclick="judge(target1,target2,target3)">
     
-    <!-- <div >
-        <input type = "text" id = "number1">
-        <input type = "text" id = "number2">
-        <input type = "text" id = "number3">
-    </div> -->
+
     <!-- 생성된 난수 확인 용 추 후 hidden이나 지울 것-->
-    <article>
+    <!-- <article>
         <div class = "answerBox" id = "target1">0</div>
         <div class = "answerBox" id = "target2">0</div>
         <div class = "answerBox" id = "target3">0</div>
-    </article>
+    </article> -->
 
     <!-- 결과 출력 란 -->
-    <article>
-        <div class = "result" id = "strike">0 strike</div>
-        <div class = "result" id = "ball">0 ball</div>
+    <!-- strike, ball 개수 출력란 추후 삭제 예정 -->
+    <!-- <article>
+        <div class = "result" id = "Str">0 strike</div>
+        <div class = "result" id = "Bal">0 ball</div>
     </article>
+     -->
+    <!-- 추후 게임 시작이나 다시시작등으로 수정 및 추가 -->
+    <div id = "startOption">
+    <input type = "button" value="게임시작" onclick="getTargetNumber()">
+    <input type = "button" value="재시작" onclick="resetGame()">
+    <input type = "button" value="새게임" onclick="hardResetGame()">
+    </div>
+    
     <article>
-        <div id = "정답"></div>
+        <div id = "정답">경기 시작!</div>
+        <div id ="최종 승리"></div>
+        <div id ="경기결과"></div>
+    </article>
 
-    </article>
+    
 
 
     <script src = "BaseballGame.js"></script>
