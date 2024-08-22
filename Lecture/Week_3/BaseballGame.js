@@ -5,33 +5,32 @@ function getRandomNumber(){ //1-9까지 난수 생성
     return Math.floor(Math.random() * 9)+1
 }
 
-function getTargetNumber(){
-    target1 = getRandomNumber()
-    target2 = getRandomNumber()
-    target3 = getRandomNumber()
-    if (target1 == target2 || target1 == target3 || target2 == target3)
-    {
-        getTargetNumber() // 중복되는 숫자가 생기면 다시 생성하기
-    }
-    console.log("Answer is ",target1, target2,target3) // 콘솔에서 상황출력 확인
-}
-
-
 // function getTargetNumber(){
 //     target1 = getRandomNumber()
 //     target2 = getRandomNumber()
 //     target3 = getRandomNumber()
-//     for (var i = 0; i <2 ;i++){
-//         var target = getRandomNumber();
-    
-//     }
-    
 //     if (target1 == target2 || target1 == target3 || target2 == target3)
 //     {
 //         getTargetNumber() // 중복되는 숫자가 생기면 다시 생성하기
 //     }
 //     console.log("Answer is ",target1, target2,target3) // 콘솔에서 상황출력 확인
 // }
+
+
+function getTargetNumber(){
+    for(;;){
+        target1 = getRandomNumber()
+        target2 = getRandomNumber()
+        target3 = getRandomNumber()
+
+        if (target1 != target2 && target1 != target3 && target2 != target3)
+            {
+               break; // 중복되는 숫자가 없을 때 break
+            }
+    }
+       
+    console.log("Answer is ",target1, target2,target3) // 콘솔에서 상황출력 확인
+}
 
 // 게임 시작
 function gameStart(){
