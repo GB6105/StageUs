@@ -6,10 +6,10 @@ function blinckBall1(){
 }
 
 function glowBallSign1(){
-    document.getElementById("ball1").style.backgroundColor = 'green'
+    document.getElementById("ball0").style.backgroundColor = 'green'
 }
 function glowOutBallSign1(){
-    document.getElementById("ball1").style.backgroundColor = 'gray'
+    document.getElementById("ball0").style.backgroundColor = 'gray'
 }
 
 
@@ -19,10 +19,10 @@ function blinckBall2(){
 }
 
 function glowBallSign2(){
-    document.getElementById("ball2").style.backgroundColor = 'green'
+    document.getElementById("ball1").style.backgroundColor = 'green'
 }
 function glowOutBallSign2(){
-    document.getElementById("ball2").style.backgroundColor = 'gray'
+    document.getElementById("ball1").style.backgroundColor = 'gray'
 }
 
 
@@ -32,10 +32,10 @@ function blinckBall3(){
 }
 
 function glowBallSign3(){
-    document.getElementById("ball3").style.backgroundColor = 'green'
+    document.getElementById("ball2").style.backgroundColor = 'green'
 }
 function glowOutBallSign3(){
-    document.getElementById("ball3").style.backgroundColor = 'gray'
+    document.getElementById("ball2").style.backgroundColor = 'gray'
 }
 
 //스트라이크 빤짝이기
@@ -45,10 +45,10 @@ function blinckStrike1(){
 }
 
 function glowStrikeSign1(){
-    document.getElementById("strike1").style.backgroundColor = 'yellow'
+    document.getElementById("strike0").style.backgroundColor = 'yellow'
 }
 function glowOutStrikeSign1(){
-    document.getElementById("strike1").style.backgroundColor = 'gray'
+    document.getElementById("strike0").style.backgroundColor = 'gray'
 }
 
 
@@ -58,10 +58,10 @@ function blinckStrike2(){
 }
 
 function glowStrikeSign2(){
-    document.getElementById("strike2").style.backgroundColor = 'yellow'
+    document.getElementById("strike1").style.backgroundColor = 'yellow'
 }
 function glowOutStrikeSign2(){
-    document.getElementById("strike2").style.backgroundColor = 'gray'
+    document.getElementById("strike1").style.backgroundColor = 'gray'
 }
 
 //out빤짝이기

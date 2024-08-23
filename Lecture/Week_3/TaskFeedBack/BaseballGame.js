@@ -63,16 +63,18 @@ function inputNumber(n){
     resetScoreBoard()
     resetResultBoard();
 
-    if(answer[0] === null){
+    if(answer[0] === undefined){
         document.getElementById("상황출력").innerHTML = "게임을 시작해주세요"
         return
     }
     //숫자 입력 받는 파트
     if(input.length >= answer.length){ //3개 이상 입력 오류
+        document.getElementById("상황출력").innerHTML = "숫자를 3개 입력했습니다. 던지세요"
         console.log("숫자를 3개 입력했습니다. 던지세요")
         return
     }
     if (input.indexOf(n) !== -1){ // 증복입력 방지
+        document.getElementById("상황출력").innerHTML = "이미 입력된 숫자입니다."
         console.log("이미 입력된 숫자입니다.")
         return
     }
@@ -103,6 +105,12 @@ function judge(answer){
 
     //상황출력 판정 부분
     if (strike1 == 3){ // 3개 모두 맞출 경우 상황출력 처리
+        out += 1
+        if (out == 3){
+            document.getElementById("상황출력").innerHTML = "이겼습니다!"
+            totalGameWon();
+            return
+        }
         //결과판 출력
         document.getElementById("상황출력").innerHTML = "맞췄습니다!"
         document.getElementById("스트라이크").innerHTML = "3 Strike"
@@ -111,6 +119,13 @@ function judge(answer){
         document.getElementById("strike1").style.backgroundColor = "yellow";
         resetLastInputBox();
         resetLastInputValue();
+        
+        for (var i = 0 ; i < out ; i++){
+            document.getElementById("out" + (i+1)).style.backgroundColor= "red"
+        }
+        getTargetNumber();
+        resetInputValue();
+        resetScore();
         return
     }
 
@@ -218,16 +233,16 @@ function newInput(){    //사용자가 직접 입력을 다시 할 수 있음
     resetInputValue();
     resetInputBox();
 }
-function resetGame(){   //게임 재시작(개발용) 추후 새게임에 기능 합치기
-    resetTarget();
-    resetInputValue();
-    resetScoreBoard();
-    // document.getElementById("상황출력").innerHTML = "숫자를 입력하세요"
-    //getTargetNumber(); // 이게 게임 시작의 핵심 하드리셋으로 옮기면 
+// function resetGame(){   //게임 재시작(개발용) 추후 새게임에 기능 합치기
+//     resetTarget();
+//     resetInputValue();
+//     resetScoreBoard();
+//     // document.getElementById("상황출력").innerHTML = "숫자를 입력하세요"
+//     //getTargetNumber(); // 이게 게임 시작의 핵심 하드리셋으로 옮기면 
     
-    console.clear()
-    console.log("Answer is ",answer[0], answer[1],answer[2])
-}
+//     console.clear()
+//     console.log("Answer is ",answer[0], answer[1],answer[2])
+// }
 
 function hardResetGame(){   //처음부터 다시시작
     resetTarget();
@@ -254,12 +269,6 @@ function hardResetGame(){   //처음부터 다시시작
 }
 
 function totalGameWon(){    //전광판 색깔 변경함수(3게임 승리시)
-    document.getElementById("ball0").style.backgroundColor = "green";
-    document.getElementById("ball1").style.backgroundColor = "green";
-    document.getElementById("ball2").style.backgroundColor = "green";
-    document.getElementById("strike0").style.backgroundColor = "yellow";
-    document.getElementById("strike1").style.backgroundColor = "yellow";
-
     blinckBall1Terminal = setInterval(blinckBall1, 300)
     blinckBall2Terminal = setInterval(blinckBall2, 300)
     blinckBall3Terminal = setInterval(blinckBall3, 300)
@@ -267,38 +276,4 @@ function totalGameWon(){    //전광판 색깔 변경함수(3게임 승리시)
     blinckStrike2Terminal = setInterval(blinckStrike2, 300)
     blinckOut1Terminal = setInterval(blinckOut1, 300)
     blinckOut2Terminal = setInterval(blinckOut2, 300)
-}
-
-
-
-//console파트는 꼭 필요한게 아니면 완료후에 지우도록 합시다.
-
-// 게임 설명 파트
-// 팝업창 하나 써서
-// 게임 룰 설명
-// 버튼 기능 설명하기
-
-// 기능 설명 파트
-// 반투명 팝업창으로 전체화면 덥고 해당 파트에 대한 설명 작성해주기
-
-
-
-
-// 튜토리얼
-// 버튼 눌러서 시작
-// 변수는 임의로 지정해주기
-// 저지 함수 그대로 가져오고
-// 값에 대한 설명 주기 (결과판으로 설명하기)
-// 변수 입력은 이상한거 누를라하면 막기(그냥 함수를 빼버리면 됨)
-// ball에 대한 설명 , strike에 대한설명
-// 정답 기준에 대한 설명 
-
-function tutorial(){
-    //안내문구 작성
-    document.getElementById("상황출력").innerHTML = "튜토리얼을 시작합니다."
-    answer[0] = 8;
-    answer[1] = 3;
-    answer[2] = 7;
-    printPart1();
-
 }
