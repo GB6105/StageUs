@@ -35,22 +35,26 @@
 // }
 
 
-document.getElementById("fileInput").addEventListener('change', inputFile);
+// document.getElementById("fileInput").addEventListener('change', inputFile);
 
-function inputFile(e) {
-    var file = e.target.files[0];
-    if (file) {
-        var reader = new FileReader();
+// function inputFile(e) {
+//     var file = e.target.files[0];
+//     if (file) {
+//         var reader = new FileReader();
         
-        reader.onload = function() {
-            var photoFrame = document.createElement("div");
-            photoFrame.style.background = `url(${reader.result})`;
-            photoFrame.style.backgroundSize = 'cover';
-            photoFrame.className = "photoFrame";
-            document.getElementById("fuckyou").appendChild(photoFrame);
-        };
+//         reader.onload = function() {
+//             var photoFrame = document.createElement("div");
+//             photoFrame.style.background = `url(${reader.result})`;
+//             photoFrame.style.backgroundSize = 'cover';
+//             photoFrame.className = "photoFrame";
+//             document.getElementById("fuckyou").appendChild(photoFrame);
+//         };
         
-        reader.readAsDataURL(file);
-    }
-}
+//         reader.readAsDataURL(file);
+//     }
+// }
 // fuck you mother fkr
+
+function cutImage(){
+    
+}

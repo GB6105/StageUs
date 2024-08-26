@@ -27,8 +27,13 @@ main{
 }
 
 article{
-    width: 400px;
-    height: 400px;
+    padding : 0;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    width: 420px;
+    height: 420px;
     border: 1px solid orange;
     background-color: rgba(0,0,0,0)
     

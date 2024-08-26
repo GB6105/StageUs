@@ -4,40 +4,40 @@
 // 3. 대상 숫자의 곱해줘야 함
 // 4. 그 결과를 화면에 출력
 
-function calGugudanEvent(){
-    var number = parseInt(document.getElementById("number").value)
+// function calGugudanEvent(){
+//     var number = parseInt(document.getElementById("number").value)
 
-    for(var index = 0; index < 10; index++){
-        //for 문 동작 원리
-        // cpu는 기억을 하지 못하기 때문에 변수를 생성하고 끊임없이 비교
+//     for(var index = 0; index < 10; index++){
+//         //for 문 동작 원리
+//         // cpu는 기억을 하지 못하기 때문에 변수를 생성하고 끊임없이 비교
         
-        // 2. js에서 HTML tag를 만들기
-        var resultP = document.createElement("p")
-        resultP.innerHTML = number * (index + 1)
-        document.getElementById("dest").appendChild(resultP)
+//         // 2. js에서 HTML tag를 만들기
+//         var resultP = document.createElement("p")
+//         resultP.innerHTML = number * (index + 1)
+//         document.getElementById("dest").appendChild(resultP)
 
-        // 1. 기존에 배웠던 방법
-        // var result = number * (index + 1)
-        // document.getElementById("result"+(index + 1)).innerHTML = result
+//         // 1. 기존에 배웠던 방법
+//         // var result = number * (index + 1)
+//         // document.getElementById("result"+(index + 1)).innerHTML = result
     
-    } //string + integer -> string 역은 에러가 남
+//     } //string + integer -> string 역은 에러가 남
 
     
-    // var result1 = number * 1
-    // document.getElementById("result1").innerHTML = result1
+//     // var result1 = number * 1
+//     // document.getElementById("result1").innerHTML = result1
 
-    // var result2 = number * 2
-    // document.getElementById("result2").innerHTML = result2
+//     // var result2 = number * 2
+//     // document.getElementById("result2").innerHTML = result2
 
-    // var result3 = number * 3
-    // document.getElementById("result3").innerHTML = result3
+//     // var result3 = number * 3
+//     // document.getElementById("result3").innerHTML = result3
 
-    // var result4 = number * 4
-    // document.getElementById("result4").innerHTML = result4
+//     // var result4 = number * 4
+//     // document.getElementById("result4").innerHTML = result4
 
-    // var result5 = number * 5
-    // document.getElementById("result5").innerHTML = result5
-}
+//     // var result5 = number * 5
+//     // document.getElementById("result5").innerHTML = result5
+// }
 
 // 2번째 문법 html에서 반복?
 // 자바스크립트에서 태그를 만들어서 html에 넣어주는 것도 가능하다.
@@ -129,38 +129,38 @@ function calGugudanEvent(){
 // ondragover: 드래그를 한 채로 마우스가 올라갈 때
 // ondrop: 드랍 할 때
 
-// var color = null
+var color = null
 
-// function getColorEvent(e){
-//     var target = e.target  //태그를 가져와줌
-//     //var color = target.style.backgroundColor // 인라인 스타일을 가져온다는 뜻
-//     //밖으로 뺀 css는 사용 불가능  
-//     // 이친구는 inline-style 을 가져오는 문법
+function getColorEvent(e){
+    var target = e.target  //태그를 가져와줌
+    //var color = target.style.backgroundColor // 인라인 스타일을 가져온다는 뜻
+    //밖으로 뺀 css는 사용 불가능  
+    // 이친구는 inline-style 을 가져오는 문법
     
-//     color = window.getComputedStyle(target).backgroundColor
+    color = window.getComputedStyle(target).backgroundColor
 
-//     console.log(color)
-// }
+    console.log(color)
+}
 
-// function dragOverEvent(e){
-//     console.log("실행됨?")
-//     e.preventDefault()
-//     // 이거 들어가야해서 이함수가 여기서 필요함
-//     // setColorEvent에 넘어가는 조건을 풀어주기 위함임
+function dragOverEvent(e){
+    console.log("실행됨?")
+    e.preventDefault()
+    // 이거 들어가야해서 이함수가 여기서 필요함
+    // setColorEvent에 넘어가는 조건을 풀어주기 위함임
 
-//     // 이벤트가 실행되는 중에는 브라우저의 기본 설정을 꺼달라
-// }
+    // 이벤트가 실행되는 중에는 브라우저의 기본 설정을 꺼달라
+}
 
-// function setColorEvent(e){
-//     console.log("드랍 됨?") // 출력안됨 실행 안됨
-//     // document.getElementById("dest").style.backgroundColor = color
-//     e.target.style.backgroundColor = color
-// }
-// // e는 이벤트에 대한 모든 정보를 담음 target은 태그를 가져오는 것
+function setColorEvent(e){
+    console.log("드랍 됨?") // 출력안됨 실행 안됨
+    // document.getElementById("dest").style.backgroundColor = color
+    e.target.style.backgroundColor = color
+}
+// e는 이벤트에 대한 모든 정보를 담음 target은 태그를 가져오는 것
 
 
-// //브라우저는 태그위에 다른태그가 올라갈 수 없다는 기본 설정이 있음
-// // 드랍 자체가 무시된다.
-// // ui 께지는 것을 막기 위해서임
+//브라우저는 태그위에 다른태그가 올라갈 수 없다는 기본 설정이 있음
+// 드랍 자체가 무시된다.
+// ui 께지는 것을 막기 위해서임
 
 
