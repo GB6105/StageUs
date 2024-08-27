@@ -38,3 +38,11 @@ article{
     background-color: rgba(0,0,0,0)
     
 }
+
+#answerAlert{
+    width:140px;
+    height: 70px;
+    background-color: white;
+    border: 1px solid orange;
+    text-align: center;
+}
