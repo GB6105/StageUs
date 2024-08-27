@@ -7,17 +7,27 @@ for (var i = 0; i< 9; i++){
     checkPuzzleAndAnswer.push(false)
 }
 
-function makePuzzleBox(){
+function makePuzzleBox(level){
     
-    var indexList = [1,2,3,4,5,6,7,8,9];
+    var parent = document.getElementById("startZone");
 
-    for (var i = 1 ; i < 10; i++){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+
+
+    var indexList = [];
+    for (var j = 1 ; j < (level ** 2)+1; j++){
+        indexList.push(i)
+    }
+
+    for (var i = 1 ; i < (level ** 2) + 1; i++){
         var puzzleBoard = document.createElement("div")
         var randomIndex = getRandomIndexNumber(indexList)
 
         //containor setting
         puzzleBoard.id = "Puzzle" + randomIndex
-        puzzleBoard.style = "width: 31% ; height: 31%;"
+        puzzleBoard.style = "width:" + (90/level)+"%; height:" + (90/level)+"%;"
         puzzleBoard.style.color = "white"
         puzzleBoard.style.margin = "2px"   
         puzzleBoard.style.border = "1px solid white"
@@ -37,15 +47,21 @@ function makePuzzleBox(){
         document.getElementById("startZone").appendChild(puzzleBoard) //insert new cell for start zone
     }
 }
-makePuzzleBox();
+// makePuzzleBox(level);
 
-function makeAnswerBox(){
-    for (var i = 1 ; i < 10; i++){
+function makeAnswerBox(level){
+
+    var parent = document.getElementById("answerZone");
+
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+    for (var i = 1 ; i < (level ** 2)+1; i++){
         var puzzleBoard = document.createElement("div")
 
         //containor setting
         puzzleBoard.id = "Answer" + i //make difference between puzzle and answer zone index
-        puzzleBoard.style = "width: 31% ; height: 31%;"
+        puzzleBoard.style = "width:" + (90/level)+"%; height:" + (90/level)+"%;"
         puzzleBoard.style.color = "rgba(0,0,0,0)" // setting cell index for invisible
         puzzleBoard.style.margin = "2px"   
         puzzleBoard.style.border = "1px solid white"
@@ -70,7 +86,7 @@ function makeAnswerBox(){
     }
 }
 
-makeAnswerBox();
+// makeAnswerBox(level);
 
 
 
