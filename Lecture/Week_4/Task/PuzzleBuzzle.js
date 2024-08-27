@@ -2,7 +2,7 @@
 var draggedImgSource = null;
 var targetCellImg = null;
 var lastDraggedCellId = null;
-var checkPuzzleAndAnswer = [];
+var checkPuzzleAndAnswer = []; // array for checkAnswer
 for (var i = 0; i< 9; i++){
     checkPuzzleAndAnswer.push(false)
 }
@@ -72,44 +72,6 @@ function makeAnswerBox(){
 
 makeAnswerBox();
 
-// while (1){
-//     var rightPuzzleCellNumber = 0
-//     for (var i = 0 ; i<checkPuzzleAndAnswer.length ; i++){
-//         if (checkPuzzleAndAnswer[i] == true){
-//             rightPuzzleCellNumber += 1
-//         }
-//     }
-//     if (rightPuzzleCellNumber == checkPuzzleAndAnswer.length){
-//         document.getElementById("answerAlert").innerHTML = "정답입니다."
-//         break
-//     }
-
-// }
-// function checkingAnser(checkPuzzleAndAnswer){
-//     var rightPuzzleCellNumber = 0
-//     for (var i = 0 ; i<checkPuzzleAndAnswer.length ; i++){
-//         if (checkPuzzleAndAnswer[i] == true){
-//             rightPuzzleCellNumber += 1
-//         }
-//     }
-//     if (rightPuzzleCellNumber == checkPuzzleAndAnswer.length){
-//         document.getElementById("answerAlert").innerHTML = "정답입니다."
-    
-//     }
-
-// }
-
-// function checkingAnswer(){
-//     for (var i = 0 ; i < 9; i++){
-//         if (randomIndex == 정답칸 인덱스(진짜 인덱스)){
-
-//         }
-//     }
-
-//     var answerAlert= document.createElement("div")
-//     document.getElementById("answerAlert").appendChild(answerAlert)
-
-// }
 
 
 //////// function declare part////////
@@ -158,13 +120,13 @@ function setImgSourceEvent(event){//change img source
 
     console.log(checkPuzzleAndAnswer)
     var countRightPuzzleCell = 0;
-    for (var i = 0 ; i < checkPuzzleAndAnswer.length ; i++){
+    for (var i = 0 ; i < 9 ; i++){
         if (checkPuzzleAndAnswer[i] == true){
             countRightPuzzleCell += 1
         }
 
     }
-    if(countRightPuzzleCell == checkPuzzleAndAnswer.length){
+    if(countRightPuzzleCell == 9){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
         document.getElementById("answerAlert").innerHTML = "정답입니다."
         
     }
