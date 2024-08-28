@@ -26,11 +26,16 @@ main{
     background-color: rgba(0,0,0,0);   
 }
 
+#fileInput{
+    width: 250px;
+    height: 25px;
+    background-color: white;
+}
 article{
     padding : 0;
     display : flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     width: 420px;
     height: 420px;
@@ -51,4 +56,9 @@ article{
     width: 40px;
     height: 40px;
     
+}
+
+#testCanvas{
+    width: 420px;
+    height: 420px;
 }

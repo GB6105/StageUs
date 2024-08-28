@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <input id = "fileInput" type ="file" value = "사진 업로드" > 
+        <input id = "fileInput" type ="file" accept = ".jpg, .jpeg, .png"> 
         <div id = "levelChoose">
-            <button class = "levelChooseButton" id = "easyLevel" onclick = "makePuzzleBox(2),makeAnswerBox(2)"></button>
-            <button class = "levelChooseButton" id = "mediumLevel" onclick = "makePuzzleBox(3),makeAnswerBox(3)"></button>
-            <button class = "levelChooseButton" id = "hardLevel" onclick = "makePuzzleBox(5),makeAnswerBox(5)"></button>
+            <button class = "levelChooseButton" id = "easyLevel" onclick = "selectLevel(2),makePuzzleBox(2),makeAnswerBox(2)"></button>
+            <button class = "levelChooseButton" id = "mediumLevel" onclick = "selectLevel(3),makePuzzleBox(3),makeAnswerBox(3)"></button>
+            <button class = "levelChooseButton" id = "hardLevel" onclick = "selectLevel(5),makePuzzleBox(5),makeAnswerBox(5)"></button>
         </div>
     </header>
     <main id = "main">
@@ -20,11 +20,11 @@
         <div id = "answerAlert"></div>
         <article id = "answerZone"></article>
     </main>
+
+    <canvas id = "testCanvas"></canvas>
     
-<!-- 
-    <script src="PuzzleBuzzle_img_cutting.js"></script> -->
+
+    <script src="PuzzleBuzzle_img_cutting.js"></script>
     <script src = "PuzzleBuzzle.js"></script>
 </body>
 </html>
-
-

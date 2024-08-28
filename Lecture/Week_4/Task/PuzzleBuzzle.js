@@ -2,39 +2,49 @@
 var draggedImgSource = null;
 var targetCellImg = null;
 var lastDraggedCellId = null;
+var gameLevel;
+
 var checkPuzzleAndAnswer = []; // array for checkAnswer
-for (var i = 0; i< 9; i++){
-    checkPuzzleAndAnswer.push(false)
+
+
+function selectLevel(n){
+    gameLevel = n;
+
+    checkPuzzleAndAnswer =[];
+
+    for (var i = 0; i< n**2; i++){
+        checkPuzzleAndAnswer.push(false)
+    }
 }
 
-function makePuzzleBox(level){
-    
+function makePuzzleBox(n){
+    var level = n ** 2
     var parent = document.getElementById("startZone");
-
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
     }
 
-
     var indexList = [];
-    for (var j = 1 ; j < (level ** 2)+1; j++){
-        indexList.push(i)
+    for (var j = 1 ; j < level + 1; j++){
+        indexList.push(j)
     }
 
-    for (var i = 1 ; i < (level ** 2) + 1; i++){
+    console.log(indexList)
+    for (var i = 1 ; i < level + 1; i++){
         var puzzleBoard = document.createElement("div")
         var randomIndex = getRandomIndexNumber(indexList)
+        console.log(randomIndex)
 
         //containor setting
         puzzleBoard.id = "Puzzle" + randomIndex
-        puzzleBoard.style = "width:" + (90/level)+"%; height:" + (90/level)+"%;"
+        puzzleBoard.style = "width:" + (90/n)+"%; height:" + (90/n)+"%;"
         puzzleBoard.style.color = "white"
         puzzleBoard.style.margin = "2px"   
         puzzleBoard.style.border = "1px solid white"
         puzzleBoard.style.backgroundColor = "white"
 
         //img Source 
-        puzzleBoard.style.backgroundImage = "url(images/sampleImg_" + randomIndex + ".jpg)";
+        puzzleBoard.style.backgroundImage = "url(images/level"+n+"/sampleImg_" + randomIndex + ".jpg)";
         puzzleBoard.style.backgroundRepeat = "no-repeat"
         puzzleBoard.style.backgroundSize = "cover"
 
@@ -47,27 +57,25 @@ function makePuzzleBox(level){
         document.getElementById("startZone").appendChild(puzzleBoard) //insert new cell for start zone
     }
 }
-// makePuzzleBox(level);
 
-function makeAnswerBox(level){
-
+function makeAnswerBox(n){
+    var level = n ** 2
     var parent = document.getElementById("answerZone");
-
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
     }
-    for (var i = 1 ; i < (level ** 2)+1; i++){
+
+    for (var i = 1 ; i < level + 1; i++){
         var puzzleBoard = document.createElement("div")
 
         //containor setting
         puzzleBoard.id = "Answer" + i //make difference between puzzle and answer zone index
-        puzzleBoard.style = "width:" + (90/level)+"%; height:" + (90/level)+"%;"
+        puzzleBoard.style = "width:" + (90/n)+"%; height:" + (90/n)+"%;"
         puzzleBoard.style.color = "rgba(0,0,0,0)" // setting cell index for invisible
         puzzleBoard.style.margin = "2px"   
         puzzleBoard.style.border = "1px solid white"
         puzzleBoard.style.backgroundColor = "white"
         puzzleBoard.innerHTML = i
-
 
         //answer zone setting(no base images)/
         //basic settings only
@@ -81,14 +89,8 @@ function makeAnswerBox(level){
         puzzleBoard.ondrop = setImgSourceEvent
 
         document.getElementById("answerZone").appendChild(puzzleBoard) // insert new cell for answer zone
-
-        
     }
 }
-
-// makeAnswerBox(level);
-
-
 
 //////// function declare part////////
 
@@ -136,13 +138,13 @@ function setImgSourceEvent(event){//change img source
 
     console.log(checkPuzzleAndAnswer)
     var countRightPuzzleCell = 0;
-    for (var i = 0 ; i < 9 ; i++){
+    for (var i = 0 ; i < (level ** 2) ; i++){
         if (checkPuzzleAndAnswer[i] == true){
             countRightPuzzleCell += 1
         }
 
     }
-    if(countRightPuzzleCell == 9){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+    if(countRightPuzzleCell == (level ** 2)){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
         document.getElementById("answerAlert").innerHTML = "정답입니다."
         
     }
