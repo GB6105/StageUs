@@ -31,7 +31,7 @@ main{
     height: 25px;
     background-color: white;
 }
-article{
+.puzzleBox{
     padding : 0;
     display : flex;
     flex-wrap: wrap;
@@ -61,4 +61,5 @@ article{
 #testCanvas{
     width: 420px;
     height: 420px;
+    border: 1px solid black;
 }

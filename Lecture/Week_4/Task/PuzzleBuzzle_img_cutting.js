@@ -80,49 +80,60 @@
 
 
 
-var userInputImg = document.getElementById("fileInput")
+// var userInputImg = document.getElementById("fileInput")
 
-var uploadedFiles = (e) => {
-    var selectedFile = userInputImg.files; // is it ok if we use this info for globally?
+// var uploadedFiles = (e) => {
+//     var selectedFile = userInputImg.files; // is it ok if we use this info for globally?
 
-    var fileReader = new FileReader();
-    fileReader.readAsDataURL(selectedFile[0]);
+//     var fileReader = new FileReader();
+//     fileReader.readAsDataURL(selectedFile[0]);
 
-    fileReader.onload = function () {
-        const canvas = document.getElementById("testCanvas");
-        const context = canvas.getContext("2d")
+//     fileReader.onload = function () {
+//         const canvas = document.getElementById("testCanvas");
+//         const context = canvas.getContext("2d")
 
-        var image = new Image();
-        image.src = fileReader.result;
+//         var image = new Image();
+//         image.src = fileReader.result;
 
-        image.onload = function() {
-            for (var i = 0; i < gameLevel ; i++){
-                for (var j = 0; j < gameLevel ; j++){
+//         image.onload = function() {
+//             for (var i = 0; i < gameLevel ; i++){
+//                 for (var j = 0; j < gameLevel ; j++){
                     
-                    context.drawImage(image,((420/gameLevel) *j ),((420/gameLevel) *j ),0,(420 / gameLevel),(420 / gameLevel),0,0);
-                }
-            }
-        }
-    }
-}
-
-userInputImg.addEventListener("change", uploadedFiles);
-    
-
-
-// function cropImg(){
-//     const canvas = document.getElementById("testCanvas");
-//     const context = canvas.getContext("2d")
-
-//     var image = new Image();
-//     image.src = fileReader.result;
-
-//     image.onload = function() {
-//         for (var i = 0; i < gameLevel ; i++){
-//             for (var j = 0; j < gameLevel ; j++){
-                
-//                 context.drawImage(image,((420/gameLevel) *j ),((420/gameLevel) *j ),0,(420 / gameLevel),(420 / gameLevel),0,0);
+//                     context.drawImage(image,((420/gameLevel) *j ),((420/gameLevel) *j ),0,(420 / gameLevel),(420 / gameLevel),0,0);
+//                 }
 //             }
 //         }
 //     }
-//}
+// }
+
+// userInputImg.addEventListener("change", uploadedFiles);
+    
+
+// function getClippedRegion(image, x, y, width, height){
+
+//     var canvas = document.createElement('canvas')
+//     var ctx = canvas.getContext('2d')
+
+//     canvas.width = width;
+//     canvas.height = height;
+
+//     ctx.drawImage(image, x, y, 100, 100, 0, 0, 100, 100);
+
+//     return canvas;
+// }
+
+// var canvas = document.getElementById('startZone');
+// var ctx = canvas.getContext('2d');
+// var image = document.getElementById('myImageId');
+// //for (var i = 0 ; i < 9; i ++){
+//     // var clip = getClippedRegion(image, canvas.width * Math.random(),canvas.height * Math.random(),100,100);
+
+//     // ctx.drawImage(clip,canvas.width * Math.random(),canvas.height * Math.random());
+    
+// //}
+// getClippedRegion(image,0,0,100,100,0,0,100,100)
+
+var canvas = document.createElement('canvas')
+var ctx = canvas.getContext('2d')
+var image = document.getElementById('myImageId');
+ctx.drawImage(image, 50,50,100,100,0,0,100,100)

@@ -28,10 +28,12 @@ function makePuzzleBox(n){
     for (var j = 1 ; j < level + 1; j++){
         indexList.push(j)
     }
+    
+    document.getElementById("answerAlert").innerHTML = ""
 
     console.log(indexList)
     for (var i = 1 ; i < level + 1; i++){
-        var puzzleBoard = document.createElement("div")
+        var puzzleBoard = document.createElement("canvas")
         var randomIndex = getRandomIndexNumber(indexList)
         console.log(randomIndex)
 
@@ -66,7 +68,7 @@ function makeAnswerBox(n){
     }
 
     for (var i = 1 ; i < level + 1; i++){
-        var puzzleBoard = document.createElement("div")
+        var puzzleBoard = document.createElement("canvas")
 
         //containor setting
         puzzleBoard.id = "Answer" + i //make difference between puzzle and answer zone index
@@ -97,7 +99,7 @@ function makeAnswerBox(n){
 function getImgSourceEvent(event){//get img source from picked cell
     var target = event.target // get event property of drgging cell
     draggedImgSource = window.getComputedStyle(target).backgroundImage // get image info of drgging cell
-    console.log(draggedImgSource + "그림을 집어들었습니다.")
+    // console.log(draggedImgSource + "그림을 집어들었습니다.")
 
     lastDraggedCellId = target.id // make recent dragging cell log
     console.log("퍼즐의 " + target.id + "번째 칸의 그림을 드래그 했습니다.")
@@ -114,7 +116,7 @@ function setImgSourceEvent(event){//change img source
 
     target.style.backgroundImage = draggedImgSource // set new img to target cell
     console.log(target.id+"번 정답칸의 그림이" + draggedImgSource + "로 바뀌었습니다.")
-    console.log(targetCellImg + "가 추출 되었습니다.")//checking beforImgsource
+    console.log("드롭한 칸에서 " + targetCellImg + "가 추출 되었습니다.")//checking beforImgsource
 
     var beforeCell = document.getElementById(lastDraggedCellId) // pickup last cell
     beforeCell.style.backgroundImage = targetCellImg // save recent image info to last cell
@@ -126,7 +128,7 @@ function setImgSourceEvent(event){//change img source
     console.log("url(images/sampleImg_" + target.innerHTML + ".jpg)")
     console.log("----------------------------------------")
    
-    if(draggedImgSource.includes("images/sampleImg_" + target.innerHTML + ".jpg")){ // compare image data index and Cell index(fixed)
+    if(draggedImgSource.includes("/sampleImg_" + target.innerHTML + ".jpg")){ // compare image data index and Cell index(fixed)
         console.log("그림과 정답칸의 인덱스가 서로 일치합니다.")
         checkPuzzleAndAnswer[target.innerHTML-1] = true;
 
@@ -138,13 +140,13 @@ function setImgSourceEvent(event){//change img source
 
     console.log(checkPuzzleAndAnswer)
     var countRightPuzzleCell = 0;
-    for (var i = 0 ; i < (level ** 2) ; i++){
+    for (var i = 0 ; i < (gameLevel ** 2) ; i++){
         if (checkPuzzleAndAnswer[i] == true){
             countRightPuzzleCell += 1
         }
 
     }
-    if(countRightPuzzleCell == (level ** 2)){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+    if(countRightPuzzleCell == (gameLevel ** 2)){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
         document.getElementById("answerAlert").innerHTML = "정답입니다."
         
     }
