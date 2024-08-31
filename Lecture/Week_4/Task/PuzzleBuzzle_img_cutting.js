@@ -133,7 +133,4 @@
 // //}
 // getClippedRegion(image,0,0,100,100,0,0,100,100)
 
-var canvas = document.createElement('canvas')
-var ctx = canvas.getContext('2d')
-var image = document.getElementById('myImageId');
-ctx.drawImage(image, 50,50,100,100,0,0,100,100)
+

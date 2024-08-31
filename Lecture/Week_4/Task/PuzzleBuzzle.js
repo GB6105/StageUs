@@ -33,7 +33,7 @@ function makePuzzleBox(n){
 
     console.log(indexList)
     for (var i = 1 ; i < level + 1; i++){
-        var puzzleBoard = document.createElement("canvas")
+        var puzzleBoard = document.createElement("div")
         var randomIndex = getRandomIndexNumber(indexList)
         console.log(randomIndex)
 
@@ -68,7 +68,7 @@ function makeAnswerBox(n){
     }
 
     for (var i = 1 ; i < level + 1; i++){
-        var puzzleBoard = document.createElement("canvas")
+        var puzzleBoard = document.createElement("div")
 
         //containor setting
         puzzleBoard.id = "Answer" + i //make difference between puzzle and answer zone index
