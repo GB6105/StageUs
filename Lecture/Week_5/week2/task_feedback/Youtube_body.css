@@ -1,0 +1,191 @@
+main{
+    display : flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+article{
+    display: flex;
+    flex-basis: 375px;
+    max-width: 700px;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    
+    height: 305px;
+      
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;    
+}
+
+.thumbnailBox1{
+    width: 100%;
+    height: 250px;
+    border:1px solid gray;
+    border-radius: 10px;   
+
+    background-image: url(thumbnail/1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.titleBox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 125px;
+    background-color: rgba(0,0,0,0);
+    border-radius: 10px;   
+    padding: 0;
+}
+.profile1{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-image: url(profile/profile1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#titlePart{
+    background-color: rgba(0,0,0,0);
+    width:100%;
+}
+#title{
+    display:block;
+    border-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 50%;
+    font-size: 18px;
+    text-align: left;
+}   
+#channelName{
+    display:block;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    width: fit-content;
+    height: 25%;
+    font-size:16px;
+}
+#view{
+    display:inline;
+
+    width:fit-content;
+    height:25%;
+    font-size:14px;
+}
+#uploadTime{
+    display:inline;
+
+    width:fit-content;
+    height:25%;
+    font-size: 14px;
+}
+#videoOption{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+#optionImg{
+    width:100%;
+}
+
+.thumbnailBox2{
+    width: 100%;
+    height: 250px;
+    border:1px solid gray;
+    border-radius: 10px;   
+
+    background-image: url(thumbnail/2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.profile2{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-image: url(profile/profile2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.thumbnailBox3{
+    width: 100%;
+    height: 250px;
+    border:1px solid gray;
+    border-radius: 10px;   
+
+    background-image: url(thumbnail/3.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.profile3{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-image: url(profile/profile3.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.thumbnailBox4{
+    width: 100%;
+    height: 250px;
+    border:1px solid gray;
+    border-radius: 10px;   
+
+    background-image: url(thumbnail/4.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.profile4{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-image: url(profile/profile4.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.thumbnailBox5{
+    width: 100%;
+    height: 250px;
+    border:1px solid gray;
+    border-radius: 10px;   
+
+    background-image: url(thumbnail/5.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.profile5{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px;
+    background-image: url(profile/profile5.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

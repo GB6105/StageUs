@@ -1,0 +1,43 @@
+body{
+    background-image: url("black-hole-in-nebula.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+h1{
+    color : white;
+    text-align: center;
+    font-size: 40px;
+}
+h2{
+    color : white;
+    text-align: center;
+}
+main{
+    margin-top: 100px;
+}
+.category{
+    color: white;
+    font-size: 24px;
+
+}
+
+#weeklyTask{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width : 40px;
+    height : 30px;
+    background-color: rgba(0,0,0,0);
+    border : 1px solid rgba(0,0,0,0);
+    color : white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+footer{
+    color: white;
+    text-align: end;
+    margin-top: 100px;
+}
