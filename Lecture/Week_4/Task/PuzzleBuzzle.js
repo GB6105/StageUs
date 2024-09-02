@@ -1,71 +1,166 @@
-function makePuzzleBox(){
-    imgList = []
-    for (var i = 1 ; i < 10; i++){
-        var puzzleBoard = document.createElement("div")
-        // puzzleBoard.innerHTML = "smallImg" + i;
-        puzzleBoard.style.width = "31%";
-        puzzleBoard.style.height = "31%";
-        puzzleBoard.style.border = "1px solid white"
-        puzzleBoard.style.margin = "2px"   
-        puzzleBoard.id = "Puzzle" + i
-        puzzleBoard.style.backgroundImage = "url(images/sampleImg_"+i+".jpg)";
-        // puzzleBoard.style.backgroundImage = `url(images/sampleImg_${i}.jpg)`;
-        puzzleBoard.style.backgroundSize = "cover"
-        puzzleBoard.style.backgroundRepeat = "no-repeat"
-        puzzleBoard.style.color = "white"
+// calling global variance
+var draggedImgSource = null;
+var targetCellImg = null;
+var lastDraggedCellId = null;
+var gameLevel;
 
-        puzzleBoard.draggable = "true"
-        puzzleBoard.ondragstart = getImgSourceEvent
-        puzzleBoard.ondragover = dragOverEvent
-        puzzleBoard.ondrop = setImgSourceEvent
+var checkPuzzleAndAnswer = []; // array for checkAnswer
 
-        document.getElementById("startZone").appendChild(puzzleBoard)
+
+function selectLevel(n){
+    gameLevel = n;
+
+    checkPuzzleAndAnswer =[];
+
+    for (var i = 0; i< n**2; i++){
+        checkPuzzleAndAnswer.push(false)
     }
 }
-makePuzzleBox();
 
-function makeAnswerBox(){
-    for (var i = 1 ; i < 10; i++){
+function makePuzzleBox(n){
+    var level = n ** 2
+    var parent = document.getElementById("startZone");
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+
+    var indexList = [];
+    for (var j = 1 ; j < level + 1; j++){
+        indexList.push(j)
+    }
+    
+    document.getElementById("answerAlert").innerHTML = ""
+
+    console.log(indexList)
+    for (var i = 1 ; i < level + 1; i++){
         var puzzleBoard = document.createElement("div")
-        puzzleBoard.style.width = "31%";
-        puzzleBoard.style.height = "31%";
-        puzzleBoard.style.border = "1px solid white"
+        var randomIndex = getRandomIndexNumber(indexList)
+        console.log(randomIndex)
+
+        //containor setting
+        puzzleBoard.id = "Puzzle" + randomIndex
+        puzzleBoard.style = "width:" + (90/n)+"%; height:" + (90/n)+"%;"
+        puzzleBoard.style.color = "white"
         puzzleBoard.style.margin = "2px"   
-        puzzleBoard.id = "Puzzle" + i
+        puzzleBoard.style.border = "1px solid white"
         puzzleBoard.style.backgroundColor = "white"
 
-        puzzleBoard.style.backgroundSize = "cover"
+        //img Source 
+        puzzleBoard.style.backgroundImage = "url(images/level"+n+"/sampleImg_" + randomIndex + ".jpg)";
         puzzleBoard.style.backgroundRepeat = "no-repeat"
-        puzzleBoard.style.color = "white"
+        puzzleBoard.style.backgroundSize = "cover"
 
+        //drag & drop Options
         puzzleBoard.draggable = "true"
         puzzleBoard.ondragstart = getImgSourceEvent
         puzzleBoard.ondragover = dragOverEvent
         puzzleBoard.ondrop = setImgSourceEvent
 
-        document.getElementById("answerZone").appendChild(puzzleBoard)
+        document.getElementById("startZone").appendChild(puzzleBoard) //insert new cell for start zone
     }
 }
 
-makeAnswerBox();
+function makeAnswerBox(n){
+    var level = n ** 2
+    var parent = document.getElementById("answerZone");
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
 
-var imgSource = null;
-var beforImgSource = null;
+    for (var i = 1 ; i < level + 1; i++){
+        var puzzleBoard = document.createElement("div")
 
-function getImgSourceEvent(event){
-    var target = event.target
-    imgSource = window.getComputedStyle(target).backgroundImage
-    console.log(imgSource)
+        //containor setting
+        puzzleBoard.id = "Answer" + i //make difference between puzzle and answer zone index
+        puzzleBoard.style = "width:" + (90/n)+"%; height:" + (90/n)+"%;"
+        puzzleBoard.style.color = "rgba(0,0,0,0)" // setting cell index for invisible
+        puzzleBoard.style.margin = "2px"   
+        puzzleBoard.style.border = "1px solid white"
+        puzzleBoard.style.backgroundColor = "white"
+        puzzleBoard.innerHTML = i
 
+        //answer zone setting(no base images)/
+        //basic settings only
+        puzzleBoard.style.backgroundSize = "cover"
+        puzzleBoard.style.backgroundRepeat = "no-repeat"
+
+        //drag & drop Options
+        puzzleBoard.draggable = "true"
+        puzzleBoard.ondragstart = getImgSourceEvent
+        puzzleBoard.ondragover = dragOverEvent
+        puzzleBoard.ondrop = setImgSourceEvent
+
+        document.getElementById("answerZone").appendChild(puzzleBoard) // insert new cell for answer zone
+    }
 }
 
-function dragOverEvent(event){
+//////// function declare part////////
+
+function getImgSourceEvent(event){//get img source from picked cell
+    var target = event.target // get event property of drgging cell
+    draggedImgSource = window.getComputedStyle(target).backgroundImage // get image info of drgging cell
+    // console.log(draggedImgSource + "그림을 집어들었습니다.")
+
+    lastDraggedCellId = target.id // make recent dragging cell log
+    console.log("퍼즐의 " + target.id + "번째 칸의 그림을 드래그 했습니다.")
+    
+}
+
+function dragOverEvent(event){//prevent Default
     event.preventDefault()
 }
 
-function setImgSourceEvent(event){
-    var target = event.target
-    beforImgSource = window.getComputedStyle(target).backgroundImage
-    target.style.backgroundImage = imgSource
-    console.log(beforImgSource)
+function setImgSourceEvent(event){//change img source 
+    var target = event.target    //get event property of target cell
+    targetCellImg = window.getComputedStyle(target).backgroundImage //get recent image info from target cell
+
+    target.style.backgroundImage = draggedImgSource // set new img to target cell
+    console.log(target.id+"번 정답칸의 그림이" + draggedImgSource + "로 바뀌었습니다.")
+    console.log("드롭한 칸에서 " + targetCellImg + "가 추출 되었습니다.")//checking beforImgsource
+
+    var beforeCell = document.getElementById(lastDraggedCellId) // pickup last cell
+    beforeCell.style.backgroundImage = targetCellImg // save recent image info to last cell
+
+    //get information of event
+    console.log("원래 드래그했던" + lastDraggedCellId + "번 퍼즐 칸에" + targetCellImg + "이 저장됩니다.")
+    console.log("----------------------------------------")
+    console.log(draggedImgSource)
+    console.log("url(images/sampleImg_" + target.innerHTML + ".jpg)")
+    console.log("----------------------------------------")
+   
+    if(draggedImgSource.includes("/sampleImg_" + target.innerHTML + ".jpg")){ // compare image data index and Cell index(fixed)
+        console.log("그림과 정답칸의 인덱스가 서로 일치합니다.")
+        checkPuzzleAndAnswer[target.innerHTML-1] = true;
+
+    }else{
+        console.log("그림과 정답칸의 인덱스가 서로 일치하지 않습니다.")
+        checkPuzzleAndAnswer[target.innerHTML-1] = false;
+    }
+
+
+    console.log(checkPuzzleAndAnswer)
+    var countRightPuzzleCell = 0;
+    for (var i = 0 ; i < (gameLevel ** 2) ; i++){
+        if (checkPuzzleAndAnswer[i] == true){
+            countRightPuzzleCell += 1
+        }
+
+    }
+    if(countRightPuzzleCell == (gameLevel ** 2)){ //반복 변수 배열 길이로 하면 안됨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+        document.getElementById("answerAlert").innerHTML = "정답입니다."
+        
+    }
+    
+}
+
+function getRandomIndexNumber(indexList){ // get random index to make random puzzle
+    var random = Math.floor(Math.random() * indexList.length)
+    var randomIndex = indexList.splice(random,1)
+    return randomIndex
+} 
+
+function resetBeforeImg(){
+    draggedImgSource = null;
+    targetCellImg = null;
+    lastDraggedCellId = null;
 }

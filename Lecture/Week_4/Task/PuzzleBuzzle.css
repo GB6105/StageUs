@@ -26,15 +26,46 @@ main{
     background-color: rgba(0,0,0,0);   
 }
 
-article{
+#fileInput{
+    width: 250px;
+    height: 25px;
+    background-color: white;
+}
+.puzzleBox{
     padding : 0;
     display : flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     width: 420px;
     height: 420px;
     border: 1px solid orange;
     background-color: rgba(0,0,0,0)
     
+}
+
+#answerAlert{
+    width:140px;
+    height: 70px;
+    background-color: white;
+    border: 1px solid orange;
+    text-align: center;
+}
+
+#levelChoose{
+    display: flex;
+    justify-content: space-between;
+    width:fit-content;
+
+}
+.levelChooseButton{
+    width: 80px;
+    height: 40px;
+    
+}
+
+#canvas{
+    width: 420px;
+    height: 420px;
+    border: 1px solid black;
 }
