@@ -7,21 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <video autoplay muted loop id = "backgroundVideo" >
+        <source src = "black-hole-in-nebula.960x540.mp4" type = "video/mp4">
+    </video>
     <h1> My Contents</h1>
     <h2> Introduction : this is my space uploading my works!</h2>
     <main>
         <p class = "category">Weekly tasks here!</p>
-        <div id = "weeklyTask">
+        <div id = "weeklyTask" onmouseover ="showCategoryBox(event)">
             <button class = "button" >Week_1</button>
-            <button class = "button" onclick = "window.open('week2/task_feedback/Youtube.html')">Week_2</button>
-            <button class = "button" onclick = "window.open('week3/task_feedback/BaseballGame.html')">Week_3</button>
-            <button class = "button" onclick = "window.open('week4/Task/PuzzleBuzzle.html')">Week_4</button>
+            <button class = "button" 
+            onclick = "window.open('week2/task_feedback/Youtube.html')">Week_2</button>
+            <button class = "button" 
+            onclick = "window.open('week3/task_feedback/BaseballGame.html')">Week_3</button>
+            <button class = "button" 
+            onclick = "window.open('week4/Task/PuzzleBuzzle.html')">Week_4</button>
         </div>
     </main>
     <footer>
         <div id = "contact" onclick = "window.open('https://www.notion.so/7fc4dd9af62c47eeae64b37e149e99cb?v=85d07ca6d7784567aea72211e7ccc112&p=cbd71207eb3e41acb28ccb45ad2a1422&pm=s')">
         This is my Notion link!<br> Check it out!</div>
     </footer>
-
+    <script src = "main.js"></script>
 </body>
 </html>

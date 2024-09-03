@@ -1,18 +1,27 @@
-body{
+#backgroundVideo{
+    position : fixed;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* body{
     background-image: url("black-hole-in-nebula.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-}
+} */
 h1{
+    position : relative; z-index: 1;
     color : white;
     text-align: center;
     font-size: 40px;
 }
 h2{
+    position : relative; z-index: 1;
     color : white;
     text-align: center;
 }
 main{
+    position : relative; z-index: 1;
     margin-top: 100px;
 }
 .category{
@@ -22,8 +31,10 @@ main{
 }
 
 #weeklyTask{
+    
     display: flex;
     flex-direction: column;
+    width: 200px;
 }
 
 button{
