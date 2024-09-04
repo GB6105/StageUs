@@ -15,4 +15,14 @@
 // }
 
 
-// hideCategoryBox();
+// hideCategoryBox();1
+
+function hideCategoryBox() {
+    document.getElementById("weeklyTask").style.visibility ="hidden";
+}
+
+hideCategoryBox();
+
+function showCategoryBox(e){
+    document.getElementById("weeklyTask").style.visibility = "visible";
+}
