@@ -33,12 +33,24 @@ header{
 
 article{
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 400px;
     background-color: rgba(0,0,0,0.9);
     color: white;
-    top: 0;
-    left: 0;
-    text-align: center;
-    font-size: 100px;
+    font-size: 40px;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+.myInfo{
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+
+
+.weeklyTask{
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
 }
