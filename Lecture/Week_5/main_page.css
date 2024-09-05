@@ -36,14 +36,15 @@ header{
 
 
 article{
-    display: flex;
     position: fixed;
-    flex-direction: column;
     width: 100%;
     height: 400px;
+
     background-color: rgba(0,0,0,0.9);
+    /* background-color: skyblue; */
     padding-top: 40px;
     padding-left: 30px;
+    top: 40px;
     font-size: 40px;
     color: white;
 }
@@ -68,3 +69,4 @@ div{
     background-color: gray;
     margin-top: 5px;
 }
+
