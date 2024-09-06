@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "PuzzleBuzzle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <input id = "fileInput" type ="file" accept = ".jpg, .jpeg, .png"> 
+        <div id = "levelChoose">
+            <button class = "levelChooseButton" id = "easyLevel" onclick = "selectLevel(2),makePuzzleBox(2),makeAnswerBox(2)">easy</button>
+            <button class = "levelChooseButton" id = "mediumLevel" onclick = "selectLevel(3),makePuzzleBox(3),makeAnswerBox(3)">normal</button>
+            <button class = "levelChooseButton" id = "hardLevel" onclick = "selectLevel(5),makePuzzleBox(5),makeAnswerBox(5)">hard</button>
+        </div>
+    </header>
+    <main id = "main">
+        <article class = "puzzleBox" id = "startZone"></article>
+
+        <div id = "answerAlert"></div>
+        <article class = "puzzleBox" id = "answerZone"></article>
+    </main>
+
+    <script src="PuzzleBuzzle_img_cutting.js"></script>
+    <script src="imageShuffle.js"></script>
+    <script src = "PuzzleBuzzle.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="PuzzleBuzzle.css">
+    <title>Puzzle Buzzle</title>
+</head>
+<body>
+    <header>
+        이미지 업로드 입력
+        <input id="fileInput" type="file" accept=".jpg, .jpeg, .png"> 
+
+         난이도 선택 버튼
+        <div id="levelChoose">
+            <button class="levelChooseButton" id="easyLevel" onclick="selectLevel(2)">easy</button>
+            <button class="levelChooseButton" id="mediumLevel" onclick="selectLevel(3)">normal</button>
+            <button class="levelChooseButton" id="hardLevel" onclick="selectLevel(5)">hard</button>
+        </div>
+    </header>
+    
+    <main id="main">
+    퍼즐이 시작되는 영역
+        <article class="puzzleBox" id="startZone"></article>
+
+        퍼즐의 답을 맞출 영역
+        <div id="answerAlert"></div>
+        <article class="puzzleBox" id="answerZone"></article>
+    </main>
+
+    JavaScript 파일들 포함
+    <script src="imageShuffle.js"></script>
+    <script src="PuzzleBuzzle.js"></script>
+</body>
+</html>
