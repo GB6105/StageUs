@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    width: 800px;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+input{
+    margin-top: 10px;
+    width: 100%;
+
+}
+#contentContainor{
+    height: 250px;
+}
+button{
+    margin-top: 10px;
+}

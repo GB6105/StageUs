@@ -1,0 +1,20 @@
+body{
+    width: 800px;
+
+}
+
+table{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+.tableDesign{
+    border : 1px solid black;
+}
+div{
+    width:100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}

@@ -20,3 +20,8 @@ article{
     justify-content: space-between;
   
 }
+
+#linkContainor{
+    margin-top: 5px;
+    width: 100%;
+}
